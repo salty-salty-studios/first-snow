@@ -1,0 +1,18 @@
+"appbuild"
+{
+	"appid"	"1259430"
+	"desc" "First Snow"
+	"buildoutput" "../../steam"
+	"contentroot" "../../dists/FirstSnow-market"
+	"setlive"	""
+	"preview" ""
+	"local"	""
+
+	"depots"
+	{
+		"1259431" "depot-content.vdf"
+		"1259432" "depot-engine-win.vdf"
+		"1259433" "depot-engine-mac.vdf"
+		"1259434" "depot-engine-linux.vdf"
+	}
+}

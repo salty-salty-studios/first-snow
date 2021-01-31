@@ -1,0 +1,32 @@
+"DepotBuildConfig"
+{
+	"DepotID" "1259433"
+
+	"FileMapping"
+	{
+		"LocalPath" "renpy/*"
+		"DepotPath" "renpy"
+		"recursive" "1"
+	}
+
+	"FileMapping"
+	{
+		"LocalPath" "lib/pythonlib2.7/*"
+		"DepotPath" "lib/pythonlib2.7"
+		"recursive" "1"
+	}
+
+	"FileMapping"
+	{
+		"LocalPath" "*.py"
+		"DepotPath" "."
+		"recursive" "0"
+	}
+
+	"FileMapping"
+	{
+		"LocalPath" "First Snow.app/*"
+		"DepotPath" "First Snow.app"
+		"recursive" "1"
+	}
+}

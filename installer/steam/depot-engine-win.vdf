@@ -1,0 +1,39 @@
+"DepotBuildConfig"
+{
+	"DepotID" "1259432"
+
+	"FileMapping"
+	{
+		"LocalPath" "renpy/*"
+		"DepotPath" "renpy"
+		"recursive" "1"
+	}
+
+	"FileMapping"
+	{
+		"LocalPath" "lib/pythonlib2.7/*"
+		"DepotPath" "lib/pythonlib2.7"
+		"recursive" "1"
+	}
+
+	"FileMapping"
+	{
+		"LocalPath" "lib/windows-i686/*"
+		"DepotPath" "lib/windows-i686"
+		"recursive" "1"
+	}
+
+	"FileMapping"
+	{
+		"LocalPath" "*.py"
+		"DepotPath" "."
+		"recursive" "0"
+	}
+
+	"FileMapping"
+	{
+		"LocalPath" "*.exe"
+		"DepotPath" "."
+		"recursive" "0"
+	}
+}

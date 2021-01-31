@@ -1,0 +1,46 @@
+"DepotBuildConfig"
+{
+	"DepotID" "1259434"
+
+	"FileMapping"
+	{
+		"LocalPath" "renpy/*"
+		"DepotPath" "renpy"
+		"recursive" "1"
+	}
+
+	"FileMapping"
+	{
+		"LocalPath" "lib/pythonlib2.7/*"
+		"DepotPath" "lib/pythonlib2.7"
+		"recursive" "1"
+	}
+
+	"FileMapping"
+	{
+		"LocalPath" "lib/linux-i686/*"
+		"DepotPath" "lib/linux-i686"
+		"recursive" "1"
+	}
+
+	"FileMapping"
+	{
+		"LocalPath" "lib/linux-x86_64/*"
+		"DepotPath" "lib/linux-x86_64"
+		"recursive" "1"
+	}
+
+	"FileMapping"
+	{
+		"LocalPath" "*.py"
+		"DepotPath" "."
+		"recursive" "0"
+	}
+
+	"FileMapping"
+	{
+		"LocalPath" "*.sh"
+		"DepotPath" "."
+		"recursive" "0"
+	}
+}

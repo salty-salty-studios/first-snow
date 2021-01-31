@@ -1,0 +1,9 @@
+# http://standards.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.0.html
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=First Snow
+Comment=Having moved away from her friends and family to attend community college, Allison Merlo is a fresh student struggling with the day to day challenges of life.
+Icon=firstsnow
+Exec=firstsnow
+Categories=Game;AdventureGame;

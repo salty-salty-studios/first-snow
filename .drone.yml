@@ -1,0 +1,216 @@
+kind: pipeline
+name: release
+
+environment:
+  INSTALLER_PREFIX: "[SSS]_First_Snow_${DRONE_TAG}_"
+  ITCH_PROJECT: salty-salty-studios/first-snow
+  DEBIAN_FRONTEND: noninteractive
+  PKGSYSTEM_ENABLE_FSYNC: "0"
+
+
+steps:
+- name: download-renpy-sdk
+  image: plugins/download
+  settings:
+    source: https://www.renpy.org/dl/7.3.5/renpy-7.3.5-sdk.tar.bz2
+    destination: renpy-sdk.tar.bz2
+    sha256: dbbd087f2578d70dc1bc3912259f5794d563e3404068c96c15d7127853dec40d
+
+- name: download-steam-renpy-support
+  image: plugins/download
+  settings:
+    source: https://www.renpy.org/dl/steam/renpy-steam-libs.zip
+    sha256: 91ac9fb8d27e60f31625a2640fe79f215ae4f9884815d8c1d45b1fc44451bb8a
+  when:
+    ref:
+    - refs/heads/release/steam/*
+    - refs/tags/v*
+
+- name: build-distributions
+  image: ubuntu:20.04
+  commands:
+  # unpack the Ren'Py SDK
+  - apt-get -qq update && apt-get install -qq unzip
+  - tar -xf renpy-sdk.tar.bz2 && rm renpy-sdk.tar.bz2
+  - mv renpy-*-sdk ../renpy-sdk
+  - |
+    for x in renpy-*.zip; do
+      if [ -f "$x" ]; then
+        unzip -q -d ../renpy-sdk "$x"
+        rm "$x"
+      fi
+    done
+  # invoke the distribution process
+  - ../renpy-sdk/renpy.sh ../renpy-sdk/launcher distribute . --destination dists $(printf " --package %s" $RENPY_PACKAGES)
+  # unpack distribution archives for later processing
+  - mkdir -p dists/installers
+  - cd dists
+  - for f in *.zip; do unzip -q "$f"; rm "$f"; done
+  environment:
+    SDL_AUDIODRIVER: dummy
+    SDL_VIDEODRIVER: dummy
+    RENPY_PACKAGES: market win mac linux
+
+
+- name: build-win-installer
+  image: ubuntu:20.04
+  commands:
+  # get NSIS
+  - apt-get -qq update && apt-get install -qq nsis rhash
+  # build installer!
+  - makensis installer/win/script.nsis
+  - mv installer/win/setup.exe dists/installers/"$${INSTALLER_PREFIX}setup_[win][$(rhash -p %c installer/win/setup.exe | tr '[a-z]' '[A-Z]')].exe"
+  when:
+    event:
+    - tag
+
+
+- name: build-mac-dmg
+  image: ubuntu:20.04
+  commands:
+  # get build setup and build libdmg
+  - apt-get -qq update && apt-get install -qq build-essential zlib1g-dev cmake genisoimage rhash wget python3 python3-pip
+  - wget -O - https://github.com/planetbeing/libdmg-hfsplus/archive/$LIBDMG_HFSPLUS_COMMIT.tar.gz | tar -zx
+  - cd libdmg-hfsplus-* && cmake . && make install && cd .. && rm -rf libdmg-hfsplus-*
+  - pip3 install biplist ds_store
+  # setup .dmg source directory
+  - title=$(basename dists/*.app .app)
+  - mkdir ../dmg
+  - mv dists/*.app ../dmg
+  - ln -s /Applications ../dmg/Applications
+  - python3 installer/mac/metabuilder.py -b 472:262 -i 'Applications:370:160' -i "$title.app:100:160" -n "$title" ../dmg/.DS_Store
+  - cp installer/mac/background.png ../dmg/.background.png
+  - cp icon.icns ../dmg/.VolumeIcon.icns
+  # build the .dmg
+  - genisoimage -V "$title" -D -R -no-pad -apple -o out.img ../dmg && rm -rf ../dmg
+  - dmg dmg out.img dist.dmg && rm out.img
+  - mv dist.dmg dists/installers/"$${INSTALLER_PREFIX}[mac][$(rhash -p %c dist.dmg | tr '[a-z]' '[A-Z]')].dmg"
+  environment:
+    LIBDMG_HFSPLUS_COMMIT: 7ac55ec64c96f7800d9818ce64c79670e7f02b67
+  when:
+    event:
+    - tag
+
+
+- name: download-appimagetool
+  image: plugins/download
+  settings:
+    source: https://github.com/AppImage/AppImageKit/releases/download/12/appimagetool-x86_64.AppImage
+    destination: appimagetool.AppImage
+    sha256: d918b4df547b388ef253f3c9e7f6529ca81a885395c31f619d9aaf7030499a13
+  when:
+    event:
+    - tag
+
+- name: download-apprun
+  image: plugins/download
+  settings:
+    source: https://github.com/AppImage/AppImageKit/releases/download/12/AppRun-x86_64
+    sha256: e8f44f56bb23e105905850250d9d87fb1a5cf64211ad141b85864b1b7a092332
+  when:
+    event:
+    - tag
+
+- name: build-linux-appimage
+  image: ubuntu:20.04
+  commands:
+  - apt-get -qq update && apt-get install -qq rhash libglib2.0-0 file
+  # setup appimage source directory
+  - chmod +x AppRun* appimagetool*
+  - mkdir -p ../appimage/opt
+  - cp -R installer/appimage/* ../appimage
+  - tar -C ../appimage/opt -xf dists/*-linux.tar.bz2
+  - mv ../appimage/opt/* ../appimage/opt/$(basename ../appimage/*.desktop .desktop)
+  - mv AppRun* ../appimage/AppRun
+  # build the appimage, oh the irony of not being able to use appimages directly in Docker
+  - ./appimagetool.AppImage --appimage-extract && rm appimagetool.AppImage
+  - ARCH=x86_64 ./squashfs-root/AppRun ../appimage "$(basename ../appimage/opt/*/*.sh .sh).AppImage"
+  - tar -cf dist.tar *.AppImage
+  - mv dist.tar dists/installers/"$${INSTALLER_PREFIX}[linux][$(rhash -p %c dist.tar | tr '[a-z]' '[A-Z]')].tar"
+  when:
+    event:
+    - tag
+
+
+- name: release-to-gitea
+  image: plugins/gitea-release
+  settings:
+    api_key:
+      from_secret: GITEA_API_KEY
+    base_url: https://code.salty-salty-studios.com
+    files:
+    - "dists/installers/*"
+    - "dists/*market*/game/dlc_*.rpa"
+  when:
+    event:
+    - tag
+
+
+- name: download-butler
+  image: plugins/download
+  settings:
+    source: https://broth.itch.ovh/butler/linux-amd64/15.20.0/archive/default
+    destination: butler.zip
+    sha256: bfd0a954b016d92cdae34d6267e130d5c20a724592378e098d222277d0e03a5c
+  when:
+    event:
+    - tag
+
+- name: release-to-itch
+  image: ubuntu:20.04
+  failure: ignore
+  commands:
+  - apt-get -qq update && apt-get -qq install unzip ca-certificates
+  - unzip -d /usr/local/bin butler.zip && chmod +x /usr/local/bin/butler
+  - butler upgrade
+  - |
+    for plat in win mac linux; do
+      butler push dists/installers/*$plat* $ITCH_PROJECT:$plat --userversion $DRONE_TAG
+    done
+  environment:
+    BUTLER_API_KEY:
+      from_secret: ITCH_API_KEY
+  when:
+    event:
+    - tag
+
+
+- name: download-steam-sdk
+  image: plugins/download
+  settings:
+    source: error://sorry.get.this.link.from.the.steamworks.page/steamworks_sdk_148.zip
+    sha256: 4f27821cded8580c89509b293965576865d0090b2f597fb998f4fc6ebbba64fd
+  when:
+    ref:
+    - refs/heads/release/steam/*
+    - refs/tags/v*
+
+- name: release-to-steam
+  image: ubuntu:20.04
+  commands:
+  - dpkg --add-architecture i386 && apt-get -qq update && apt-get -qq install unzip xxd qemu-user ca-certificates libc6:i386
+  # unpack the Steamworks SDK
+  - unzip -q steamworks_sdk_*.zip && rm steamworks_sdk_*.zip
+  - mv sdk ../steam-sdk
+  # setup SteamGuard login
+  - mkdir ~/Steam
+  - echo "$STEAM_SENTRY_CONTENTS" | xxd -r -p > ~/Steam/"$STEAM_SENTRY_FILENAME"
+  # invoke the SteamPipe process
+  - REPO_DIR=$(pwd)
+  - cd ../steam-sdk/tools/ContentBuilder/builder_linux
+  - chmod +x steamcmd.sh linux32/steamcmd
+  - ./steamcmd.sh +login "$STEAM_USERNAME" "$STEAM_PASSWORD" +run_app_build "$REPO_DIR"/installer/steam/app.vdf +quit
+  environment:
+    STEAM_USERNAME:
+      from_secret: STEAM_USERNAME
+    STEAM_PASSWORD:
+      from_secret: STEAM_PASSWORD
+    STEAM_SENTRY_FILENAME:
+      from_secret: STEAM_SENTRY_FILENAME
+    STEAM_SENTRY_CONTENTS:
+      from_secret: STEAM_SENTRY_CONTENTS
+    DEBUGGER: qemu-i386
+  when:
+    ref:
+    - refs/heads/release/steam/*
+    - refs/tags/v*

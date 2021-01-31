@@ -1,0 +1,13 @@
+"DepotBuildConfig"
+{
+	"DepotID" "1259431"
+
+	"FileMapping"
+	{
+		"LocalPath" "game/*"
+		"DepotPath" "game"
+		"recursive" "1"
+	}
+
+	"FileExclusion" "game/dlc_*.rpa"
+}
