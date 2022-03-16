@@ -51,16 +51,19 @@ $ renpy.transition(dissolve, layer='master')
 show eileen outdoors_fists normal open at rightedge as eileen2:
     xpos 1.15
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Thanks1.ogg"
 eileen "Thanks for coming and helping carry all this."
 
 show eileen normal neutral at rightedge as eileen2:
     xpos 1.15
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_NervousSure.ogg"
 allison "It's fine. I wanted to see a bit of the town, anyway."
 
 show eve outdoors half sadopen at rightside as eve2:
     xpos 0.9
     nod2
+voice "Eve_Eileen4.ogg"
 eve "Can we sit down? I'm tired."
 
 show eve outdoors half sad at rightside as eve2:
@@ -73,6 +76,7 @@ eileen "It's not that far to the car."
 show eve outdoors normal shy at rightside as eve2:
     xpos 0.9
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Hey1.ogg"
 allison "Wouldn't hurt to rest a bit, would it? There's a bench right up there."
 
 show eileen narrow angry at rightedge as eileen2:
@@ -129,6 +133,7 @@ play music "music/eve_3_m.ogg" fadein 4.0
 show eileen outdoors_crossed narrow open at left2:
     xpos 0.25
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_No2.ogg"
 eileen "Don't even think about it."
 
 show eileen outdoors_crossed neutral at left2:
@@ -136,6 +141,7 @@ show eileen outdoors_crossed neutral at left2:
 show eve outdoors normal annoyedopen at centerright:
     xzoom -1 xpos 0.6
     linear 0.7 xzoom 1 xpos 0.62
+voice "Eve_Grumble4.ogg"
 eve "Come on, I've been good!"
 
 show eileen outdoors_onhip closed open at left2:
@@ -165,6 +171,7 @@ $ renpy.transition(dissolve, layer='master')
 show eileen outdoors_crossed narrow frown at left2:
     xzoom -1 xpos 0.25
     linear 0.7 xzoom 1 xpos 0.31
+voice "Eileen_Allison5.ogg"
 eileen "Allison..."
 
 allison "I was just feeling like getting some ice cream for myself. Might as well get her one while I'm already there, right?"
@@ -177,6 +184,7 @@ eve "Strawberry!"
 show eileen outdoors_crossed closed frown at centerleft:
     xzoom 1 xpos 0.31
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_SureThing.ogg"
 allison "Two strawberry ice creams, coming right up."
 
 stop music fadeout 4.0
@@ -546,8 +554,6 @@ show shadow:
     alpha 0
     ease 8.0 alpha 0.55
 "I pause for a moment, my heart stinging as I think of her. Even if it hurts, I know it needs to be said."
-
-allison "Maybe I'm the only one who saw it that way."
 
 allison "Maybe it was naive of me to think that way. Maybe I've been having the wrong idea all this time."
 

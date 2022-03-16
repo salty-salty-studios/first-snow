@@ -46,14 +46,17 @@ scene bg aptallison road dusk
 show eileen outdoors_onhip normal open at rightish
 with fadeInOut
 $ camera_reset()
+voice "Eileen_Hmm2.ogg"
 eileen "You're lucky to live so close to school."
 
 show eileen neutral at rightish
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Sigh2.ogg"
 allison "I still have no idea how you can hike all the way to your place every single day and not be exhausted."
 
 show eileen outdoors_crossed narrow smile at rightish
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Heh2.ogg"
 eileen "That's what happens when you don't wimp out of walking. Being fit has its advantages."
 
 "While I stop myself from imagining how fit Eileen's body is, I'm reminded that she's seen my own body. I cringe in embarrassment as I remember modeling for her the other day, trying to shake off the feeling before she notices."
@@ -72,6 +75,7 @@ show bg aptallison outside dusk as aptallison_outside_dusk behind eileen with mi
 show eileen outdoors_onhip lookaway neutral at center:
     xzoom 1 xpos 0.5
     linear 0.7 xzoom -1 xpos 0.45
+voice "Allison_Um1.ogg"
 allison "Well... here it is."
 
 "I'm more than a little nervous about what she thinks of this new home after bringing her all the way here. Rather than judging me for it, she looks more to be carefully studying it. My nervous attempts to read her stoic gaze get me nowhere."
@@ -109,6 +113,7 @@ stop sound fadeout 1.0
 show rose halfclosed smirk at centerright:
     alpha 1.0
 $ renpy.transition(dissolve, layer='master')
+voice "Rose_Hey1.ogg"
 rose "Yo!"
 
 scene black with midDissolve
@@ -138,6 +143,7 @@ $ renpy.transition(dissolve, layer='master')
 show eileen open at leftedge as eileen2:
     xpos 0.065
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Huh1.ogg"
 eileen "So this is where you live, huh?"
 
 allison "Sorry if it's a bit cold; the heating's having problems."
@@ -149,6 +155,7 @@ show rose indoors_handonhip normal neutral at right2:
 show rose indoors_handonhip halfclosed weaksmile at right2 as rose2:
     zoom 1.65 yoffset 400
 $ renpy.transition(dissolve, layer='master')
+voice "Rose_Heh1.ogg"
 rose "You mean having problems as usual."
 
 "There goes trying to put on a front."
@@ -181,7 +188,7 @@ show rose normal smile at rightedge as rose2:
     ease 4.0 xpos 0.95
 $camera_move(-6550,-1000,-600,0,4,'ease')
 "She gestures towards the trophy on the side-table and certificate on the wall above it, being awards from competitions I won in high school."
-
+voice "Allison_HuhAndUm.ogg"
 allison "You never asked."
 
 show eileen indoors_crossed narrow at leftedge as eileen2:
@@ -192,6 +199,7 @@ show rose halfclosed puzzled at centerright as rose2:
     xpos 0.95
     ease 1.5 xpos 0.58
 pause 1.0
+voice "Rose_Allison2.ogg"
 rose "What, seriously? Allison, c'mon."
 
 show rose weaksmile at centerright as rose2:
@@ -221,6 +229,7 @@ show rose neutral at centerright as rose2:
 show eileen indoors_onhip closed neutral at leftedge as eileen2:
     xzoom -1 xpos 0.065
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm2.ogg"
 eileen "Makes sense; she's got me out of a jam a few times now. She's a handy person to have around."
 
 "I feel myself flower into a blush at the words, sinking lower into my chair as my face feels hot."
@@ -233,11 +242,13 @@ show eileen indoors_onhip normal open at left2:
 show rose indoors_handonhip normal neutral at rightish
 with fadeInOut
 $ camera_reset()
+voice "Eileen_Thanks1.ogg"
 eileen "Thanks for the food, by the way."
 
 show eileen neutral at left2
 show rose normal smile at rightish
 $ renpy.transition(dissolve, layer='master')
+voice "Rose_YeahYeah.ogg"
 rose "It's nothing. Nice to finally meet someone from Allison's side of the fence for a change, actually."
 
 show rose smirk at rightish
@@ -250,6 +261,7 @@ $ renpy.transition(dissolve, layer='master')
 
 show eileen indoors_crossed open at left2
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Huh1.ogg"
 eileen "Really?"
 
 show eileen neutral at left2
@@ -275,10 +287,12 @@ stop sound fadeout 1.0
 show rose smile at rightish
 show eileen neutral at left2
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Eileen6.ogg"
 allison "You agreed to come! It's Caprice's club, anyway!"
 
 show eileen indoors_crossed narrow smile at left2
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Heh3.ogg"
 eileen "Oh, so now you have nothing to do with it. This is a new story."
 
 show eileen normal neutral at left2
@@ -303,6 +317,7 @@ allison "Tired?"
 
 show eileen indoors_crossed narrow angry at left2
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Grumble2.ogg"
 eileen "I'm always tired."
 
 show rose talking at rightish
@@ -332,12 +347,14 @@ $ renpy.transition(dissolve, layer='master')
 show eileen normal neutral at left2
 show rose halfclosed laugh at rightish
 $ renpy.transition(dissolve, layer='master')
+voice "Rose_Heh2.ogg"
 rose "Someone's hungry."
 
 "I look up quizzically at her, drawing a raised eyebrow. It's only now I realize my cheeks are as full as a chipmunk's."
 
 show eileen indoors_crossed open at left2
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm1.ogg"
 eileen "Good to see you two get along well."
 
 show eileen neutral at left2
@@ -349,7 +366,7 @@ show eileen lookaway at left2
 show rose weaksmile at rightish
 $ renpy.transition(dissolve, layer='master')
 rose "Allison's fine. Quiet as a mouse, and manages to put up with my crap."
-
+voice "Allison_NervousLaugh.ogg"
 allison "Considering how much she takes care of chores and errands, I can't really complain."
 
 stop music fadeout 5.0
@@ -412,6 +429,7 @@ $ renpy.sound.set_volume(1.0, channel='loopsfx')
 show rose talking at right2:
     xpos 0.74
 $ renpy.transition(dissolve, layer='master')
+voice "Rose_No.ogg"
 rose "No. Not at all."
 
 show rose neutral at right2:
@@ -431,10 +449,12 @@ show eileen normal neutral at left2
 show rose halfclosed puzzled at right2:
     xpos 0.74
 $ renpy.transition(dissolve, layer='master')
+voice "Rose_Hm.ogg"
 rose "I have to admit, it was nice when I dated a guy who could cook..."
 
 show eileen indoors_onhip disbelief open at left2
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Huh1.ogg"
 eileen "Having her around doesn't make things too awkward when you bring guys over?"
 
 show eileen neutral at left2
@@ -453,7 +473,7 @@ show rose neutral at right2:
 show eileen neutral at left2
 $ renpy.transition(dissolve, layer='master')
 "I frown at the both of them."
-
+voice "Allison_Hm4.ogg"
 allison "I don't want to hear about this."
 
 show eileen indoors_onhip frown at left2
@@ -475,6 +495,7 @@ show rose laugh at right2:
     xpos 0.74
 show eileen lookaway smile at left2
 $ renpy.transition(dissolve, layer='master')
+voice "Rose_Laugh2.ogg"
 "Rose laughs, and even Eileen looks amused. I sulk, hating that the attention has been centered on me now. I especially don't want this kind of conversation around Eileen. Thankfully, Rose seems content with her teasing."
 
 show rose normal talking at right2:
@@ -496,6 +517,7 @@ rose "The artsy type, huh? Going for the big bucks, then."
 
 show eileen lookawaynarrow angry at left2
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Ugh3.ogg"
 eileen "Thanks."
 
 show rose halfclosed at right2:
@@ -524,6 +546,7 @@ rose "Looks cool."
 
 show eileen indoors_crossed narrow open at left2
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Seriously3.ogg"
 eileen "Uh huh."
 
 show rose talking at right2:
@@ -543,10 +566,12 @@ show rose halfclosed smirk at right2:
     easeout .175 yoffset 200
     easein .15 yoffset 192
     easeout .175 yoffset 200
+voice "Rose_OhYeah3.ogg"
 rose "Wait, no, forget what I said. I'm in the Yakuza, and they gave me these as my initiation."
 
 show eileen indoors_crossed closed smile at left2
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_AwkwardGiggle2.ogg"
 eileen "Nothing says Yakuza like a biker in Middle America."
 
 stop ambiance fadeout 4.0
@@ -655,6 +680,7 @@ allison "Why?"
 show eileen outdoors_crossed lookawaynarrow open at center:
     zoom 1.2 ypos 1.28 xpos 0.52
 $ renpy.transition(dissolve, layer='master')
+voice "scene_2S4_en_1ea54d8d.ogg"
 eileen "To be honest, I had you pegged as some spoiled little delicate flower when I first met you. You know, the kind who coasts along on their parent's attention, before the real world punches them in the face."
 
 show eileen normal at center:
@@ -800,7 +826,8 @@ rose "Believe me, I'm not in any position to call someone weird."
 show cg act2 balconychat talk 2 with midDissolve
 allison "Yeah."
 
-rose "Hey, that's not that you're supposed to say!"
+voice "scene_2S4_en_62fc89aa.ogg"
+rose "Hey, that's not what you're supposed to say!"
 
 $ renpy.transition(hpunch, layer='master')
 "She elbows me in response to my mostly unintentional bite back."
@@ -857,6 +884,7 @@ show cg act2 balconychat talk 3 with midDissolve
 
 "I'm glad I have Rose here for me. In many ways, I feel like we can't relate to each other, but we can still have this kind of conversation and understand each other. We're just two girls, talking about love."
 
+voice "scene_2S4_en_f3f2d29e.ogg"
 rose "You're a good girl, Allison. I promise that whatever happens, you can call on me. Okay?"
 
 allison "Thanks."

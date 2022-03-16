@@ -12,15 +12,16 @@ steps:
 - name: download-renpy-sdk
   image: plugins/download
   settings:
-    source: https://www.renpy.org/dl/7.3.5/renpy-7.3.5-sdk.tar.bz2
+    source: https://www.renpy.org/dl/7.4.11/renpy-7.4.11-sdk.tar.bz2
     destination: renpy-sdk.tar.bz2
-    sha256: dbbd087f2578d70dc1bc3912259f5794d563e3404068c96c15d7127853dec40d
+    sha256: a73378f06a5925ea0d163b5825c298ed65dafb3d0cdccd9f34d7eace46adef1f
 
 - name: download-steam-renpy-support
   image: plugins/download
   settings:
-    source: https://www.renpy.org/dl/steam/renpy-steam-libs.zip
-    sha256: 91ac9fb8d27e60f31625a2640fe79f215ae4f9884815d8c1d45b1fc44451bb8a
+    source: http://update.renpy.org/7.4.11/renpy-7.4.11-steam.update.gz
+    destination: renpy-dlc-steam.tar.gz
+    sha256: 670b259c42a5b5938750318142dd8ed73b70446d18b73e161be3428cd439c716
   when:
     ref:
     - refs/heads/release/steam/*
@@ -30,13 +31,13 @@ steps:
   image: ubuntu:20.04
   commands:
   # unpack the Ren'Py SDK
-  - apt-get -qq update && apt-get install -qq unzip
+  - apt-get -qq update && apt-get install -qq unzip libgl1
   - tar -xf renpy-sdk.tar.bz2 && rm renpy-sdk.tar.bz2
   - mv renpy-*-sdk ../renpy-sdk
   - |
-    for x in renpy-*.zip; do
+    for x in renpy-*.tar.gz; do
       if [ -f "$x" ]; then
-        unzip -q -d ../renpy-sdk "$x"
+        tar -C ../renpy-sdk --exclude='update/*' -xf "$x"
         rm "$x"
       fi
     done

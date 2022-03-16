@@ -443,11 +443,13 @@ scene bg colorado house livingroom night
 show eileen pjs_crossed lookawaynarrow open at offcenterleft:
     xzoom -1 xpos 0.42
 with midDissolve
+voice "Eileen_Ugh1.ogg"
 eileen "What a day."
 
 show eileen pjs_crossed lookawaynarrow angry at offcenterleft:
     xzoom -1 xpos 0.42
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Sigh2.ogg"
 allison "That goes for both of us."
 
 "I almost mention the argument Eileen had with her mother, but I can't work out how I want to phrase it. Maybe it's for the best that Eileen preempts me."
@@ -465,8 +467,9 @@ allison "The times we stopped were good."
 show eileen pjs_crossed lookawaynarrow sadmouth at offcenterleft:
     xpos 0.47
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm2.ogg"
 eileen "You're braver than I am; couldn't pay me enough to get on one of those things."
-
+voice "Allison_SoftLaugh.ogg"
 allison "Hah, come on. I'm sure you'd be a natural at it."
 
 show eileen pjs_crossed disbelief open at offcenterleft:
@@ -504,11 +507,13 @@ eileen "Being so specific that you'll use the guest room, not mine."
 show eileen pjs_crossed normal open at offcenterleft:
     xpos 0.47
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Huh1.ogg"
 eileen "Did you just realize what that was about?"
 
 show eileen neutral at offcenterleft:
     xpos 0.47
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Oh.ogg"
 allison "No, but I--!"
 
 show eileen pjs_onhip smile normal at offcenterleft:
@@ -723,6 +728,7 @@ play sound "sfx/door_close.ogg"
 show eileen pjs_onhip normal at rightedge:
     xpos 0.92
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Eileen3.ogg"
 allison "Eileen?"
 
 show eileen pjs_onhip at rightedge:
@@ -734,6 +740,7 @@ allison "Shouldn't you be sleeping?"
 
 show eileen pjs_crossed disbelief open at center
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm1.ogg"
 eileen "Same goes for you."
 
 show eileen lookaway neutral at center
@@ -750,10 +757,12 @@ allison "You did that?"
 
 show eileen pjs_onhip narrow open at center
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Heh4.ogg"
 eileen "Once. My friends were so freaked out we went back to the usual horrible romance stuff."
 
 show eileen pjs_crossed frown at center
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Hm2.ogg"
 allison "There's nothing wrong with romance movies..."
 
 "Her face makes it abundantly clear this is a difference of opinion that'll never be bridged."
@@ -873,6 +882,7 @@ eileen "I also missed living alone..."
 
 show eileen pjs_onhip closed open at center
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Grumble1.ogg"
 eileen "Well that was annoying."
 
 show eileen pjs_onhip neutral normal at center:
@@ -890,6 +900,7 @@ play sound "sfx/door_open.ogg"
 show eileen pjs_onhip lookaway smile at rightside:
     xzoom -1 xpos 0.8
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_AwkwardGiggle2.ogg"
 eileen "...To be honest, I think you look really pretty too."
 
 show eileen pjs_onhip closed smile at rightside:

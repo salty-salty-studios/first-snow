@@ -48,6 +48,7 @@ eileen "Okay to sit here?"
 
 show eileen neutral at rightish
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_NervousHi3.ogg"
 allison "Ah, sure!"
 
 $ renpy.music.set_volume(0.4, delay=3, channel='ambiance')
@@ -70,6 +71,7 @@ stop sound fadeout 1.0
 show eileen indoors_crossed lookaway open at rightish:
     yoffset 50
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm2.ogg"
 eileen "Cold any better?"
 
 allison "Yeah, clearing up now."
@@ -126,6 +128,7 @@ show eileen indoors_onhip disbelief frown at rightish:
     yoffset 50
 $ renpy.transition(dissolve, layer='master')
 window hide
+voice "Allison_Sigh2.ogg"
 "All I can do is sigh and slump down in my seat as I lay my phone on the table."
 
 "Eileen looks at me in puzzlement, her fork hovering near her mouth."
@@ -133,11 +136,13 @@ window hide
 show eileen disbelief open at rightish:
     yoffset 50
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Huh1.ogg"
 eileen "Bad news?"
 
 show eileen neutral at rightish:
     yoffset 50
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Hm4.ogg"
 allison "Roommate forgot to do groceries. We're out of food."
 
 show eileen indoors_crossed narrow at rightish:
@@ -161,7 +166,7 @@ show eileen indoors_fists closed at rightish:
     yoffset 50
 $ renpy.transition(dissolve, layer='master')
 "Eventually, after finishing her food, she speaks up."
-
+voice "Eileen_Hmm1.ogg"
 eileen "I guess I was cooking some extra anyway..."
 
 show eileen indoors_onhip normal open at rightish:
@@ -184,11 +189,13 @@ eileen "Yeah. Should be fine, right? You okay with stir fry?"
 show eileen neutral at rightish:
     yoffset 50
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_ThankYou.ogg"
 allison "I... yes. Thank you. Thank you so much. I really, really appreciate this."
 
 show eileen indoors_crossed disbelief open at rightish:
     yoffset 50
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Grumble2.ogg"
 eileen "Sure, whatever. Just don't make it weird."
 
 show eileen angry at rightish:
@@ -225,11 +232,13 @@ show wallace indoors heightened open neutral at centerright:
 "-not Eileen."
 
 stop sound fadeout 1.0
+voice "Allison_Um1.ogg"
 allison "Uh-"
 
 show wallace even open smile at centerright:
     xpos 0.68 alpha 1
 $ renpy.transition(dissolve, layer='master')
+voice "Wallace_Hey2.ogg"
 wallace "Oh, 'evening."
 
 show wallace heightened forward neutral at centerright:
@@ -301,6 +310,7 @@ show eileen indoors_onhip normal neutral at leftside:
     xzoom -1
     xpos 0.15
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_NervousHi2.ogg"
 allison "Um, hi."
 
 show wallace forward at right2:
@@ -313,6 +323,7 @@ eileen "So you managed to find the place. Welcome to my home, I guess."
 
 show eileen narrow at leftside
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm2.ogg"
 eileen "I'd introduce you to this guy as well, but it seems you two already know each other."
 
 show eileen neutral at leftside
@@ -338,11 +349,13 @@ allison "Your apartment's really nice."
 
 show eileen indoors_crossed closed neutral at leftside
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Thanks1.ogg"
 eileen "Thanks. I like to try and keep things organized."
 
 show wallace even halfopen smile at right2:
     xpos 0.78
 $ renpy.transition(dissolve, layer='master')
+voice "Wallace_Yeah1.ogg"
 wallace "Especially when visitors are over."
 
 show eileen indoors_crossed annoyed angry at leftside
@@ -400,6 +413,7 @@ play sound "sfx/knifechops.ogg" loop
 $ renpy.music.set_volume(0.0, delay=1.0)
 stop sound fadeout 1.0
 with vpunch
+voice "Eileen_No4.ogg"
 eileen "Stop!"
 
 stop sound fadeout 1.0
@@ -421,7 +435,7 @@ show eileen indoors_crossed annoyed open at centerleft as eileen2:
     xpos 0.32
 $ renpy.transition(dissolve, layer='master')
 eileen "Did I hand you a hatchet?"
-
+voice "Allison_Hm2.ogg"
 allison "No..."
 
 show eileen indoors_crossed narrow at centerleft as eileen2:
@@ -448,6 +462,7 @@ $ renpy.transition(dissolve, layer='master')
 eileen "Now use the knife like a lever, instead of wildly hacking away. We're making nice, slow slices, not some slasher B-movie scene."
 
 stop sound fadeout 1.0
+voice "Allison_Okay.ogg"
 allison "Right, I think I have it."
 
 show eileen indoors_onhip at centerleft as eileen2:
@@ -473,9 +488,11 @@ $camera_move(1200,0,450,0,6,'ease')
 allison "I'm lucky if I don't mess up instant noodles."
 
 show cg act1 cooking2 with dissolve
+voice "Eileen_Huh1.ogg"
 eileen "I thought those were impossible to get wrong. I'm genuinely impressed."
 
 show cg act1 cooking happy2 with dissolve
+voice "Allison_Hmwithquestionmark.ogg"
 allison "You do all your own cooking?"
 
 $camera_move(0,0,0,0,10,'ease')
@@ -500,6 +517,7 @@ show eileen indoors_crossed frown narrow as eileen2 at leftedge:
 show eileen indoors_crossed frown narrow at centerright:
     alpha 0
 with midDissolve
+voice "Eileen_Hmm1.ogg"
 eileen "Maybe we should just become roommates..."
 
 "I think I'm starting to get a handle on their relationship, now. As strange a pair as they might seem, the stern and uncompromising Eileen and gentle giant Wallace seem like they're a compatible couple."
@@ -594,6 +612,7 @@ show shadow:
 show shadow:
     alpha 0.4
     ease 1.0 alpha 0
+voice "Allison_Um1.ogg"
 allison "You normally do all this without anyone to help?"
 
 show eileen indoors_crossed lookaway open at center
@@ -610,10 +629,12 @@ $ renpy.transition(dissolve, layer='master')
 
 show eileen open at center
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Grumble3.ogg"
 eileen "Tell me, how did you and Caprice meet?"
 
 show eileen neutral at center
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Hm3.ogg"
 allison "We were sitting at the same table for a biology lecture, and she started passing me notes during class out of the blue. Once we started talking afterwards, she didn't really stop."
 
 allison "...Ah."
@@ -621,7 +642,7 @@ allison "...Ah."
 show eileen closed frown at center
 $ renpy.transition(dissolve, layer='master')
 eileen "That's the way it goes with her. Once you get caught in her orbit, she doesn't let you go."
-
+voice "Allison_NervousLaugh.ogg"
 allison "Caprice isn't that bad. She's a sweet person, just... high energy."
 
 show eileen lookaway neutral at center
@@ -642,6 +663,7 @@ wallace "Root beer, please!"
 show eileen indoors_crossed narrow open at center:
     xzoom 1 xpos 0.25
     linear 0.7 xzoom -1 xpos 0.2
+voice "Eileen_No2.ogg"
 eileen "Water is healthier."
 
 show wallace indoors heightened halfopen frown at rightedge:
@@ -649,6 +671,7 @@ show wallace indoors heightened halfopen frown at rightedge:
 show eileen neutral at left2:
     xzoom -1 xpos 0.2
 $ renpy.transition(dissolve, layer='master')
+voice "Wallace_Allison5.ogg"
 wallace "Allison, please save me from this woman."
 
 "All I can do is give a weak smile. Much as I'd like to give him what he asks for, following Eileen's orders would probably be for the best."
@@ -677,7 +700,7 @@ $ renpy.transition(dissolve, layer='master')
 show eileen indoors_onhip neutral normal at left:
     alpha 0
 eileen "Yeah. Really need to find something else to put up there, though."
-
+voice "Allison_Huh2.ogg"
 allison "But why? They're really good!"
 
 show eileen indoors_crossed neutral disbelief  as eileen2 at offcenterleft
@@ -688,6 +711,7 @@ allison "You like painting people in particular, don't you?"
 
 show eileen normal open as eileen2 at offcenterleft
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm1.ogg"
 eileen "Just into portraits and figures. Modern art's all well and good, but I started with figure drawing and ended up attached to it."
 
 show eileen closed open as eileen2 at offcenterleft
@@ -701,6 +725,7 @@ show eileen indoors_onhip normal neutral at left2:
     xzoom -1
 show wallace indoors heightened open smile at right2
 with fadeInOut
+voice "Wallace_Hmm.ogg"
 wallace "Interested in this stuff, Allison?"
 
 allison "Me? I just drew a little in high school. Passing the time, that kind of thing."
@@ -711,10 +736,12 @@ wallace "Nothing wrong with that. I sketch on my tablet, and Eileen gives pointe
 
 show eileen annoyed smile at left2
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Heh1.ogg"
 eileen "Maybe I should throw you to the wolves and tell Caprice you like doing art as well."
 
 show wallace heightened halfsmall frown at right2
 $ renpy.transition(dissolve, layer='master')
+voice "Wallace_Sigh6.ogg"
 wallace "You wouldn't."
 
 show eileen indoors_crossed smile narrow at left2
@@ -744,7 +771,7 @@ show eileen indoors_onhip neutral normal at left2
 $ renpy.transition(dissolve, layer='master')
 stop sound fadeout 1.0
 "Giving a nod, I get up from my chair and collect my coat from Eileen's helpful hand, quickly throwing it over myself."
-
+voice "Allison_ThankYou.ogg"
 allison "Thanks for tonight, it was nice."
 
 stop music fadeout 5.0

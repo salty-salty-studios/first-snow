@@ -48,12 +48,13 @@ show eileen outdoors_onhip closed neutral at rightside:
     xpos 1.2
     ease 4.0 xpos 0.85
 "My spacing out is interrupted as the main door shuts with a loud thud, a familiar figure striding past."
-
+voice "Allison_Hey2.ogg"
 allison "Welcome back. How's the car?"
 
 stop sound fadeout 1.0
 show eileen narrow open at rightside
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm1.ogg"
 eileen "It's fine."
 
 show eileen lookaway at rightside
@@ -62,6 +63,7 @@ eileen "We're heading out once dad's finished poking at it, by the way."
 
 show eileen neutral at rightside
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Um2.ogg"
 allison "Uh, sure. Where're we going?"
 
 show eileen outdoors_crossed normal open at rightside
@@ -169,6 +171,7 @@ allison "So you're experienced at this, huh?"
 show eileen hiking_onhip open normal at right2:
     xpos 0.755
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Sure1.ogg"
 eileen "Yeah, been for a few hikes 'round here."
 
 eileen "Played outside a lot as a kid, ended up adventuring more and more until I started hiking."
@@ -181,6 +184,7 @@ allison "With your father, or...?"
 show eileen hiking_onhip narrow open at right2:
     xpos 0.755
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_No1.ogg"
 eileen "No, alone. It's nice to have some time to myself."
 
 show eileen hiking_onhip angry at right2:
@@ -219,7 +223,7 @@ show shadow:
     alpha 0
     ease 2.0 alpha 0.4
 "Running out of breath, I have to stop and take a moment to collect myself. My natural pace is slower then Eileen's, making this hike all the more taxing."
-
+voice "Allison_Sigh1.ogg"
 allison "How is all this related to art?"
 
 hide eileen
@@ -240,6 +244,7 @@ show eileen hiking_onhip open normal at centerleft:
     zoom 0.65 yoffset -510
     xzoom -1 xpos 0.37
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Allison2.ogg"
 eileen "Watch out, there's a stone there."
 
 show eileen hiking_onhip neutral normal at centerleft:
@@ -256,12 +261,13 @@ show eileen hiking_onhip neutral normal at centerleft:
     xpos 0.37
 $ renpy.transition(dissolve, layer='master')
 "My breathing heavy, I come to the grim realization that Eileen must've been far more fit when she was young than I am now."
-
+voice "Allison_Sorry1.ogg"
 allison "Sorry. I'm a total city kid, I guess."
 
 show eileen hiking_onhip narrow smile at centerleft:
     xzoom -1 xpos 0.37
     linear 0.7 xzoom 1 xpos 0.42
+voice "Eileen_Heh3.ogg"
 eileen "You're plenty smart, but you can't just pick up everything from books and internet, you know."
 
 "I don't really know how to receive that half-compliment, half-criticism."
@@ -343,6 +349,7 @@ allison "Looks like you've come here before."
 show eileen hiking_onhip lookawaynarrow open at offcenterleft as eileen2:
     xpos 0.485
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm1.ogg"
 eileen "I ended up building this place up into a little base camp over the years. Bears kept taking out anything I brought in or set up, but at least they leave the rocks and ditches alone."
 
 $ renpy.sound.set_volume(1.0, channel='sound')
@@ -382,7 +389,7 @@ show eileen hiking_onhip closed neutral at center
 with fadeInOut
 $ camera_reset()
 window show dissolve
-
+voice "Allison_Hm2.ogg"
 allison "It's peaceful."
 
 show eileen hiking_onhip neutral normal at center
@@ -393,10 +400,12 @@ allison "I thought my apartment was quiet, but it's nothing like this."
 
 show eileen hiking_onhip disbelief open at center
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Huh1.ogg"
 eileen "Your place wasn't quiet at all when I was there. Constant cars, construction, and people walking by."
 
 show eileen hiking_onhip neutral at center
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Hm2.ogg"
 allison "I'm not like you; I've only ever lived in the big city."
 
 allison "I was worried about being so far from home, but I think I like it here. Playing with Eve has been fun, too."
@@ -413,6 +422,7 @@ $ renpy.transition(dissolve, layer='master')
 
 show eileen hiking_onhip lookawaynarrow at center
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Eileen3.ogg"
 allison "Just..."
 
 "I've started speaking before even gathering my thoughts. This isn't a great start."
@@ -426,6 +436,7 @@ $ renpy.transition(dissolve, layer='master')
 stop music fadeout 4.0
 stop ambiance fadeout 4.0
 stop ambiance2 fadeout 4.0
+voice "Eileen_Ugh3.ogg"
 eileen "Can we not bring all that up? I came here exactly to get away from my parents being on my case."
 
 $camera_move(-150,600,600,0,5,'ease')
@@ -510,6 +521,7 @@ $ renpy.sound.set_volume(0.08, delay=8.0, channel='ambiance')
 play ambiance "sfx/ambiance/forest-afternoon.ogg" fadein 2.0
 $ renpy.sound.set_volume(0.25, delay=8.0, channel='ambiance2')
 play ambiance2 "sfx/ambiance/water-stream.ogg" fadein 0.5
+voice "Eileen_Huh2.ogg"
 eileen "Um..."
 
 show eileen hiking_onhip disbelief frown at center:
@@ -543,10 +555,11 @@ allison "It won't hurt me."
 
 show eileen hiking_onhip narrow smile at center
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Heh2.ogg"
 eileen "What, just another of your animal friends?"
 
 "I'm not exactly in the mood for being teased."
-
+voice "Allison_Hm4.ogg"
 allison "It's the kind of thing you can learn in books or on the internet."
 
 show eileen hiking_onhip sad smile at center
@@ -575,6 +588,7 @@ eileen "Ready to keep going, then? We've still got the afternoon ahead of us."
 show eileen hiking_onhip lookaway frown at offcenterleft as eileen2:
     xpos 0.48
     ease 2.0 xpos 0.1
+voice "Allison_NervousSure.ogg"
 allison "Yeah, sure."
 
 "I try to put as much enthusiasm into it as I can muster, but I get the distinct feeling that I'm just along for the ride, now."

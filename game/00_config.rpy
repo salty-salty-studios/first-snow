@@ -13,8 +13,8 @@ init -1 python:
 init -1 python hide:
     # Basic settings.
     config.name = "First Snow"
-    config.version = "1.0.1"
-    config.patch_version = 3
+    config.version = "1.1.0"
+    config.patch_version = 4
     config.developer = False
 
     # Window.
@@ -36,7 +36,8 @@ init -1 python hide:
     config.has_quicksave = False
 
     # Misc.
-    config.voice_filename_format = "voice/{filename}.mp3"
+    config.auto_voice = "voice/{id}.ogg"
+    config.voice_filename_format = "voice/{filename}"
     config.default_text_cps = 25
     config.thumbnail_width = 193
     config.thumbnail_height = 108

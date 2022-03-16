@@ -66,11 +66,13 @@ show eileen pjs_onhip open normal at leftside:
     xpos 0.155
 hide eileen2
 with dissolve
+voice "Eileen_Allison1.ogg"
 eileen "Want any food? There's toast and cereal if you want any."
 
 show eileen pjs_onhip neutral at leftside:
     xpos 0.155
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Hm2.ogg"
 allison "I don't usually eat breakfast. Thanks, though."
 
 show eileen pjs_onhip neutral closed at leftside:
@@ -147,6 +149,7 @@ elizabeth "Eve, Allison! We're heading out for a moment."
 show eve outdoors happy at offcenterleft:
     xzoom -1 xpos 0.45
 $ renpy.transition(dissolve, layer='master')
+voice "Eve_Okay1.ogg"
 eve "'Kay!"
 
 show cutin andrew2 as andrew:
@@ -338,6 +341,7 @@ show eve outdoors neutral normal at center:
 
 show eve outdoors happy normal at center
 $ renpy.transition(dissolve, layer='master')
+voice "Eve_Oooh.ogg"
 eve "Ah, a snowman!"
 
 allison "Yup! Never had the time to make one back home. Want to build one too?"
@@ -463,6 +467,7 @@ allison "Have you shown Mom and Dad?"
 
 show eve outdoors unsure normal at center
 $ renpy.transition(dissolve, layer='master')
+voice "Eve_Grumble1.ogg"
 eve "They're always busy, so I can't always show them. My nanny's seen all of them, though! She's nice."
 
 "A nanny, huh? I suppose you don't get to live this nicely without some sacrifices. I wonder if Eileen was raised by a nanny too."
@@ -485,6 +490,7 @@ stop sound fadeout 1.0
 show eileen indoors_crossed open disbelief at leftside:
     xzoom -1 xpos 0.15
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Huh1.ogg"
 eileen "What are you two doing?"
 
 show eileen indoors_crossed neutral at leftside:
@@ -508,6 +514,7 @@ show eve outdoors unsure normal at right2:
     xpos 0.79
 show eileen indoors_onhip neutral at leftside
 $ renpy.transition(dissolve, layer='master')
+voice "Eve_SadOh3.ogg"
 eve "But I wanna make him better..."
 
 show eileen indoors_crossed neutral normal at leftside:
@@ -532,6 +539,7 @@ show eileen indoors_onhip smile closed at center
 show eve outdoors happy normal at right2:
     xpos 0.79
 $ renpy.transition(dissolve, layer='master')
+voice "Eve_Giggle.ogg"
 eve "That looks cool!"
 
 show eileen indoors_crossed normal open at center
@@ -542,6 +550,7 @@ eileen "There, he'll be happier now that he's less cold. He'll still be here whe
 
 show eileen indoors_crossed smile narrow at center
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Heh3.ogg"
 eileen "...Your show is starting, you know."
 
 show eve outdoors surprised normal at right2:
@@ -568,12 +577,14 @@ $ renpy.transition(dissolve, layer='master')
 stop sound fadeout 1.0
 eileen "You can grab your scarf back when Eve gets bored of making him."
 
+voice "Allison_Sigh2.ogg"
 allison "I was going to use it on my own snowman..."
 
 show eileen indoors_crossed narrow open at offcenterleft
 $ renpy.transition(dissolve, layer='master')
 stop ambiance fadeout 4.0
 $ _dismiss_pause = False
+voice "Eileen_Seriously3.ogg"
 eileen "I swear, you're worse than her sometimes."
 
 window hide dissolve

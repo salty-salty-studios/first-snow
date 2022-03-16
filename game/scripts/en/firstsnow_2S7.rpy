@@ -99,7 +99,7 @@ with dissolve
 $ camera_reset()
 window show dissolve
 $ renpy.pause(3.0, hard=True)
-
+voice "Allison_Hey2.ogg"
 allison "Hi, Eileen. Is someone else with you?"
 
 show eileen indoors_crossed normal angry at leftside:
@@ -136,6 +136,7 @@ allison "It's fine, you don't need to repay me."
 show eileen indoors_crossed normal open at leftside:
     xpos 0.17
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm1.ogg"
 eileen "How's your day been?"
 
 show eileen neutral at leftside:
@@ -144,7 +145,7 @@ $ renpy.transition(dissolve, layer='master')
 allison "Good! I mean... normal, I guess."
 
 "I might think everything's still normal, but my nerves around Eileen haven't quite settled yet. We have only been together a matter of days. I gingerly take a sip to calm myself down before continuing."
-
+voice "Allison_Hm3.ogg"
 allison "Physics was good. Kinda basic right now, but I think we're going to get to some interesting stuff next year."
 
 show eileen neutral at leftside:
@@ -155,11 +156,13 @@ allison "So what're you doing?"
 show eileen indoors_crossed lookawaynarrow open at leftside:
     xpos 0.17
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Grumble4.ogg"
 eileen "Trying to stay awake, mainly. What a day."
 
 show eileen neutral at leftside:
     xpos 0.17
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_SoftLaugh.ogg"
 allison "Caprice?"
 
 show eileen narrow open at leftside:
@@ -200,7 +203,7 @@ show millie outdoors_neutral even closedsad neutral at right2:
     xzoom 1 xpos 0.72 alpha 1
     linear 0.7 xzoom -1 xpos 0.7
 "She's appalling with names..."
-
+voice "Allison_Sigh2.ogg"
 allison "She's Millie. You should at least remember who fixed your car."
 
 show eileen disbelief open at leftside:
@@ -279,6 +282,7 @@ show millie indoors_neutral neutral at rightside:
 show eileen indoors_onhip closed open at leftside:
     xzoom -1 xpos 0.17 yoffset 0
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Afternoon.ogg"
 eileen "'Afternoon. Welcome to Friday."
 
 show eileen lookaway neutral at leftside:
@@ -306,7 +310,7 @@ show millie indoors_neutral even normal at rightside:
     xpos 0.71
 $ renpy.transition(dissolve, layer='master')
 "As Eileen takes a long drink of her coffee, the majestic mountain ranges and foothills around the city float to mind. They'd be freezing cold this time of year, but she seems to be made of stern stuff. I hadn't taken her to be the outdoorsy type, though."
-
+voice "Allison_Hmwithquestionmark.ogg"
 allison "That sounds nice. Hiking?"
 
 play sound "sfx/mug-put-down.ogg"
@@ -326,6 +330,7 @@ show millie raised frown at rightside:
 show eileen neutral at leftside:
     xpos 0.17
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Um2.ogg"
 allison "Deer hunting? As in, killing them?"
 
 show eileen disbelief angry at leftside:
@@ -337,11 +342,13 @@ show eileen indoors_crossed lookawaynarrow angry at leftside:
     xpos 0.17
 $ renpy.transition(dissolve, layer='master')
 $ renpy.music.set_volume(0.2, delay=5.0)
+voice "Eileen_Huh2.ogg"
 eileen "...Well, we don't pet them. Wallace taught me how to shoot down at a range, and I take a loaner whenever we head out."
 
 show millie indoors_neutral sad normal speaking at rightside:
     xpos 0.71
 $ renpy.transition(dissolve, layer='master')
+voice "Millie_ISee1.ogg"
 millie "So that's what Wallace gets up to outside the writing club. I did wonder about that."
 
 show millie neutral at rightside:
@@ -368,6 +375,7 @@ $ renpy.music.set_volume(0.8, delay=2.0)
 show millie indoors_tented raised normal speaking at rightside:
     xpos 0.71
 $ renpy.transition(dissolve, layer='master')
+voice "Millie_Allison2.ogg"
 millie "...Any plans yourself, Allison?"
 
 show eileen normal neutral at leftside:
@@ -385,6 +393,7 @@ millie "Sounds like my weekend plans. I'm the only one of my roommates with a ca
 show eileen indoors_crossed lookaway open at leftside:
     xpos 0.17
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm2.ogg"
 eileen "Speaking of roommates, what are your thoughts on this new club of Caprice's?"
 
 show eileen neutral at leftside:
@@ -406,6 +415,7 @@ show eileen indoors_onhip normal at leftside:
 show millie even half at rightside:
     xpos 0.71
 $ renpy.transition(dissolve, layer='master')
+voice "Millie_SmallLaugh.ogg"
 millie "For all I tease her, I am sincerely glad to see Caprice so happy. She shines brightest when she has something to work on."
 
 show millie closedsad at rightside:
@@ -448,17 +458,20 @@ show millie neutral at rightside:
 show eileen indoors_crossed closed open at leftside:
     xpos 0.17
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Bye2.ogg"
 eileen "I ask myself that question all the time. Take it easy."
 
 show eileen lookaway neutral at leftside:
     xpos 0.17
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_TakeCare1.ogg"
 allison "Take care in the snow; it's starting to pile up."
 
 stop music fadeout 5.0
 show millie outdoors_tented raised normal speaking at rightside:
     xzoom 1 xpos 0.71
     linear 0.7 xzoom -1 xpos 0.69
+voice "Millie_Absolutely.ogg"
 millie "I'll make sure to. See you around."
 
 show millie even closedhappy neutral at rightside:
@@ -477,6 +490,7 @@ with fadeInOut
 "A brief silence ensues between the two of us as we sip at our own, the quiet chatter of other students and staff at the cafe providing background noise as we do."
 
 play sound "sfx/mug-put-down.ogg"
+voice "Allison_Sorry2.ogg"
 allison "Sorry for being so weird. About the hunting, that is."
 
 play music "music/painter.ogg" fadein 3.0
@@ -494,11 +508,12 @@ eileen "Being stuck indoors all the time is easy to do when focusing on painting
 show eileen neutral at offcenterright
 $ renpy.transition(dissolve, layer='master')
 "It'd be nice to take a trip somewhere with Eileen, to the mountains or wherever else. Seeing the places she likes to go, and how it influences her art. Probably not to go hunting, though."
-
+voice "Allison_Hm1.ogg"
 allison "Millie's nice. Keeping the writing club going sounds like a lot of work."
 
 show eileen indoors_crossed narrow smile at offcenterright
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Heh1.ogg"
 eileen "See? Could never have had that nice chat if I hadn't called her over."
 
 show eileen lookaway at offcenterright
@@ -519,16 +534,18 @@ eileen "Allison, why do you think I joined this dumb club?"
 
 show eileen lookawaynarrow open at offcenterright
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm1.ogg"
 eileen "I actually thought about joining the existing art club for a while, back when they first offered. They seemed interested in me, and I was just some bewildered freshman who didn't know anything at that point."
 
 show eileen narrow grumble at offcenterright
 $ renpy.transition(dissolve, layer='master')
 eileen "Over time, I realized they didn't give a damn about me. They just wanted my paintings, and my skills. I was a trophy for their club; something to be shown off. That was when I gave up on them."
-
+voice "Allison_Hmwithquestionmark.ogg"
 allison "So you joined this one because Caprice was better?"
 
 show eileen closed open at offcenterright
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_No1.ogg"
 eileen "She's the last person I'd do this for."
 
 show eileen indoors_crossed lookaway sadmouth at offcenterright
@@ -590,6 +607,7 @@ show eileen outdoors_onhip normal neutral at leftside:
     ease 1.0 yoffset 0
     ease 2.0 xpos 0.68
 $ renpy.pause(3.0, hard=True)
+voice "Allison_Oh.ogg"
 allison "Aah! Chemistry's just about to start! What class did you have coming up?"
 
 $camera_move(2500,200,400,0,4,'ease')
@@ -597,6 +615,7 @@ pause 3.5
 show eileen outdoors_crossed lookawaynarrow open at centerright:
     xpos 0.68 yoffset 0
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Grumble4.ogg"
 eileen "...Math."
 
 show eileen angry at centerright:

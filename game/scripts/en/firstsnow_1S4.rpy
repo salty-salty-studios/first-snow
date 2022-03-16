@@ -89,6 +89,7 @@ play music "music/eileen_5_m.ogg" fadein 3.0
 show eileen indoors_onhip normal open at center:
     zoom 1.0 xpos 0.5 ypos 1.0 yoffset 50
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Afternoon.ogg"
 eileen "'Afternoon."
 
 "My existence has been noted. I don't think that could sound any more perfunctory, but at least she isn't shooing me away."
@@ -103,7 +104,7 @@ show eileen normal neutral at center:
     ypos 1.0 yoffset 50
     ease 2.0 yoffset 0
 "Setting my bag beside my chair as I take a seat, I pull out my phone to check for any missed messages and switch it to silent before placing it on the table before me."
-
+voice "Allison_Hey1.ogg"
 allison "Hi. Surprised you're not in the art room."
 
 stop sound fadeout 1.0
@@ -119,6 +120,7 @@ $ renpy.transition(dissolve, layer='master')
 
 show eileen narrow frown at center
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Ugh3.ogg"
 eileen "Caprice wouldn't stop bugging me to join her drawing for some stupid theme."
 
 allison "What was it?"
@@ -145,8 +147,9 @@ $ renpy.transition(dissolve, layer='master')
 
 show eileen indoors_onhip normal neutral at center
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm1.ogg"
 eileen "You any good at this stuff?"
-
+voice "Allison_Hmwithquestionmark.ogg"
 allison "Math? Well, I ended up skipping the gen-ed class thanks to my placement exam results."
 
 show eileen indoors_crossed lookaway open at center
@@ -160,7 +163,7 @@ allison "Nothing like that. Math and science are easy enough, so I ended up coas
 show eileen narrow at center
 $ renpy.transition(dissolve, layer='master')
 "Eileen's eyes narrow. Maybe she wasn't exaggerating about her skills; after having such an easy time in high school, it's easy to forget I'm the odd one out here. Of course I'd put my foot in my mouth just as I was starting to break the ice with her."
-
+voice "Allison_HuhAndUm.ogg"
 allison "I mean, uh... If you want, I could have a look at your work?"
 
 show eileen indoors_onhip closed neutral at center:
@@ -208,12 +211,13 @@ $ renpy.transition(dissolve, layer='master')
 "That didn't help."
 
 "Polynomials do seem to trip a lot of people up, so she isn't catastrophically bad at this. Still, considering this first semester of gen-ed subjects is mostly reviewing what we did in high school, this isn't a promising start."
-
+voice "Allison_Um2.ogg"
 allison "Mind if I scribble on this a bit?"
 
 show eileen indoors_onhip lookaway open at centerleft:
     xpos 0.3
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Sure2.ogg"
 eileen "Knock yourself out."
 
 show shadow:
@@ -273,6 +277,7 @@ stop sound fadeout 1.0
 show eileen narrow sadmouth at left2:
     xzoom -1 xpos 0.25
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Grumble3.ogg"
 eileen "I think so..."
 
 allison "You don't sound too sure."
@@ -299,6 +304,7 @@ show eileen indoors_onhip lookaway grumble at offcenterleft:
     zoom 1.5 yoffset 500
     xpos 0.45
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm2.ogg"
 eileen "Needing to ask them doesn't mean that I want to."
 
 show eileen neutral at offcenterleft:
@@ -322,6 +328,7 @@ show eileen lookawaynarrow open at offcenterleft:
     zoom 1.5 yoffset 500
     xpos 0.45
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Grumble5.ogg"
 eileen "So that brat was trying to drag him into the club too..."
 
 show eileen lookawaynarrow frown at offcenterleft:
@@ -354,7 +361,7 @@ show eileen indoors_onhip normal neutral blur as eileen2 at offcenterleft:
 $ phone.hide()
 window hide
 "Quickly typing in an agreement to meet there, I lock the phone once more."
-
+voice "Allison_Hey2.ogg"
 allison "I might go grab lunch. Want to come?"
 
 show eileen indoors_fists normal open at offcenterleft:
@@ -446,6 +453,7 @@ window show dissolve
 
 show caprice indoors_wave even normal grin at center:
     bounce
+voice "Caprice_Hi3.ogg"
 caprice "Hey, Allie! Long time no see!"
 
 "We saw each other yesterday..."
@@ -459,6 +467,7 @@ caprice "How's everything going? How're your classes?"
 show caprice neutral at center:
     xpos 0.5 yoffset 55 rotate 0
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_SoftLaugh.ogg"
 allison "Not too bad. It's all familiar enough right now."
 
 show caprice indoors_behindback even closedhappy at center
@@ -474,7 +483,7 @@ allison "I was thinking; You meant for me to meet Eileen last week, didn't you?"
 show caprice indoors_handonhip grin at center
 $ renpy.transition(dissolve, layer='master')
 caprice "She's fun, isn't she?"
-
+voice "Allison_Hm1.ogg"
 allison "Something... like that. That painting of the girl in the water was really pretty."
 
 show caprice indoors_pumped wink opensmile at center:
@@ -483,6 +492,7 @@ show caprice indoors_pumped wink opensmile at center:
     easeout .175 yoffset 55
     easein .15 yoffset 50
     easeout .175 yoffset 55
+voice "Caprice_Yeah4.ogg"
 caprice "She's really good, huh? No wonder the other art club tried to grab her."
 
 show caprice indoors_handonhip raised normal neutral at center
@@ -493,6 +503,7 @@ allison "I’m not sure it's a good idea to be forcing people into this club. I 
 
 show caprice indoors_chintap even normal pout at center
 $ renpy.transition(dissolve, layer='master')
+voice "Caprice_Allie5.ogg"
 caprice "You sound like you're not really into it yourself."
 
 show caprice indoors_behindback even closedhappy puffed at center:
@@ -529,7 +540,7 @@ show caprice indoors_pumped even wink at center:
     easein .15 yoffset 50
     easeout .175 yoffset 55
 caprice "Seeing that kind of talent makes you kinda envious though, right?"
-
+voice "Allison_Hm1.ogg"
 allison "Well, I just drew a bit in high school for fun. I don't think I could ever manage something beautiful like that."
 
 show caprice indoors_behindback closedhappy grin at center

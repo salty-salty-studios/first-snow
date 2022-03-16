@@ -36,11 +36,13 @@ $ renpy.sound.set_volume(0.2, channel="loopsfx", delay=0.5)
 show caprice indoors_wave raised normal opensmile at left2:
     xpos 0.18
     bounce
+voice "Caprice_Hi1.ogg"
 caprice "Good afternoon, Allison!"
 
 show caprice neutral at left2:
     xpos 0.18
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Hey2.ogg"
 allison "Hi. You look cheerful as usual."
 
 stop sound fadeout 1.0
@@ -131,10 +133,12 @@ $ renpy.transition(dissolve, layer='master')
 scene bg buildingart art dusk bustsketch
 show eileen outdoors_crossed lookaway open at center
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm1.ogg"
 eileen "Haven't done this in a while, have you?"
 
 show eileen neutral at center
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Sorry1.ogg"
 allison "Sorry..."
 
 show eileen narrow at center
@@ -160,6 +164,7 @@ $ renpy.transition(dissolve, layer='master')
 
 show eileen closed smile at center
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Heh3.ogg"
 eileen "You like cats?"
 
 allison "I have one back home."
@@ -175,11 +180,12 @@ allison "Ever had one?"
 show eileen lookawaynarrow at center
 $ renpy.transition(dissolve, layer='master')
 eileen "Would've been nice, but my parents weren't interested in the idea."
-
+voice "Allison_Hm1.ogg"
 allison "Sounds like you and your parents don't get along very well."
 
 show eileen narrow frown at center
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_No1.ogg"
 eileen "We don't."
 
 show eileen outdoors_onhip open at center
@@ -202,6 +208,7 @@ show shadow behind eileen:
 stop music fadeout 8.0
 show eileen outdoors_crossed annoyed frown at center
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Grumble5.ogg"
 eileen "That's nice."
 
 "I open my mouth to respond, but the tone behind her words makes it clear that she considers this discussion over."
@@ -230,11 +237,13 @@ show caprice indoors_wave raised normal opensmile at leftside:
     xzoom -1 zoom 0.65 yoffset -300
     xpos 0.0 alpha 0.0
     ease 1.5 xpos 0.12 alpha 1.0
+voice "Caprice_Allie1.ogg"
 caprice "Hey, have you tried doing other stuff as well?"
 
 show caprice neutral at leftside:
     xpos 0.12 alpha 1.0
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Huh1.ogg"
 allison "What do you mean?"
 
 show caprice indoors_chintap closedhappy neutral at leftside:
@@ -273,6 +282,7 @@ show eileen angry at center as eileen2:
 show caprice indoors_behindback even half pout at leftside:
     xpos 0.12
 $ renpy.transition(dissolve, layer='master')
+voice "Caprice_No3.ogg"
 caprice "It's not harassment, it's negotiating!"
 
 show caprice indoors_handonhip even half puffed at leftside:
@@ -306,9 +316,10 @@ $ camera_reset()
 show eileen indoors_onhip disbelief neutral at left2:
     xzoom 1 xpos 0.26
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm1.ogg"
 eileen "Hmm."
 
-show caprice indoors_chintap raised normal frown raised at right2
+show caprice indoors_chintap raised normal frown at right2
 $ renpy.transition(dissolve, layer='master')
 caprice "What's up?"
 
@@ -327,6 +338,7 @@ eileen "The door to the cabinet's locked."
 
 show caprice indoors_wave even closedhappy open at right2
 $ renpy.transition(dissolve, layer='master')
+voice "Caprice_Hmm2.ogg"
 caprice "Nah, they never lock it after class."
 
 show eileen indoors_onhip lookaway grumble at left2:
@@ -346,7 +358,7 @@ show eileen neutral at left2
 show caprice flat at right2
 $ renpy.transition(dissolve, layer='master')
 "As they face off, I take a look at the cabinet between them. It's a type of lock I've tried before, and not particularly high-end. Then again, I've never done this with two people peering over my shoulder."
-
+voice "Allison_Um2.ogg"
 allison "Umm..."
 
 show eileen indoors_onhip normal neutral at left2
@@ -359,11 +371,13 @@ allison "I could maybe try picking it?"
 show caprice indoors_behindback raised normal open at right2:
     yoffset 55 rotate 0
     ease 1.0 rotate -5
+voice "Caprice_What1.ogg"
 caprice "You can do that!?"
 
 show eileen indoors_onhip disbelief open at left2
 show caprice raised neutral at right2
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Seriously3.ogg"
 eileen "Someone sure has a knack for skills that upstanding people shouldn't have."
 
 show eileen neutral at left2
@@ -381,7 +395,7 @@ eileen "We don't really have much of an option. Think you can do it?"
 show eileen neutral at left2
 $ renpy.transition(dissolve, layer='master')
 "Accepting my fate, I get up and hold my hand towards them."
-
+voice "Allison_Hm4.ogg"
 allison "I'll need a couple of paperclips."
 
 # Timeskip
@@ -397,6 +411,7 @@ with circlewipe
 
 show caprice frown at right2
 $ renpy.transition(dissolve, layer='master')
+voice "Caprice_Allie6.ogg"
 caprice "Well? Did you get it?"
 
 stop music fadeout 2.0
@@ -413,6 +428,7 @@ play music "music/art_club_a.ogg" fadein 3.0
 show eileen indoors_onhip disbelief frown at left2
 show caprice indoors_pumped opensmile closedhappy raised at right2:
     bounce
+voice "Caprice_AH.ogg"
 caprice "Awesome!"
 
 stop sound fadeout 1.0
@@ -444,10 +460,12 @@ with smoothDissolve
 show eileen indoors_onhip normal open at left2
 show caprice indoors_behindback closedhappy at right2
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Heh1.ogg"
 eileen "You did good. Where, or maybe I should say why, did you pick up skills like that?"
 
 show eileen neutral at left2
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_NervousLaugh.ogg"
 allison "I just like learning things."
 
 show eileen indoors_onhip normal neutral at left2
@@ -468,13 +486,15 @@ allison "Just... things. Schoolwork wasn't too hard, so instead of studying, I e
 
 show eileen indoors_crossed lookawaynarrow neutral at left2
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Huh2.ogg"
 eileen "Are you aware of how sketchy that sounds?"
 
 show caprice indoors_handonhip even closedhappy grin at centerright:
     xpos 0.6
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Oh.ogg"
 allison "It's not about doing bad things! They're just puzzles. The point is working them out, not getting free stuff."
-
+voice "Allison_Sigh2.ogg"
 allison "When I put it that way, I guess it is pretty useless to learn."
 
 show caprice indoors_behindback neutral wink even at centerright:
@@ -601,6 +621,7 @@ $ phone.message('eileen', '8:51 PM', 'i think that goes both ways.', to=True)
 $ phone.wait()
 
 window show
+voice "Rose_UhHuh3.ogg"
 rose "I see..."
 
 $ phone.hide()
@@ -612,7 +633,7 @@ hide rose3
 with vpunch
 window hide
 "Taken completely unawares, I leap off the couch and spin around, barely keeping a hold of the phone in my hand."
-
+voice "Allison_Oh.ogg"
 allison "When did you get in!?"
 
 show rose outdoors_smokingmouth normal smile at right2 as rose2:
@@ -653,6 +674,7 @@ show rose indoors_smoking smile halfclosed at center:
     zoom 1.35 yoffset 300
     xpos 0.52
 $ renpy.transition(dissolve, layer='master')
+voice "Rose_Heh2.ogg"
 rose "You look happy."
 
 "All I can do is grimace, my face becoming flushed from embarrassment at her bullying. Thanks to my cheeks mildly hurting, I can tell she isn't wrong."
@@ -678,7 +700,7 @@ show rose indoors_smoking halfclosed neutral at center:
     xpos 0.52
 $ renpy.transition(dissolve, layer='master')
 "Caprice, Wallace, Eileen, everyone's really nice to me. Yet, it's Eileen I can't stop thinking about. Behind that cold exterior of hers, there's a genuinely kind person."
-
+voice "Allison_Hm4.ogg"
 allison "What’s with that face?"
 
 stop music fadeout 2.0

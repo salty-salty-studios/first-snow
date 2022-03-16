@@ -62,12 +62,13 @@ show eve outdoors neutral normal at left2:
     xzoom -1 xpos 0.18
 with fadeInOut
 window show dissolve
-
+voice "Allison_SoftLaugh.ogg"
 allison "It's nice here."
 
 show eve outdoors half unsure at left2:
     xpos 0.18
 $ renpy.transition(dissolve, layer='master')
+voice "Eve_Grumble3.ogg"
 eve "Kinda boring sometimes, though."
 
 "Thinking about it, I could see that being the case for a child. The few people out and about today are basically all graying older folk hobbling along as I look around us. Such a pleasant atmosphere has its downsides."
@@ -203,7 +204,7 @@ show eve outdoors normal shy at center:
     xzoom -1
 with fadeInOut
 eve "Hey, what's your family like?"
-
+voice "Allison_Hm3.ogg"
 allison "Totally different, I'll say that much."
 
 show eve outdoors normal neutral at center
@@ -261,28 +262,33 @@ show eve outdoors normal neutral at center:
     zoom 1.4 yoffset 150
     xzoom -1
 $ renpy.transition(midDissolve, layer='master')
+voice "Allison_Sigh1.ogg"
 "All I can do is sigh."
 
 $ renpy.music.set_volume(0.65)
 play music "music/eileen_5_m.ogg" fadein 10.0
 show eve outdoors unsure normal at center
 $ renpy.transition(dissolve, layer='master')
+voice "Eve_Grumble1.ogg"
 eve "What's wrong?"
 
 allison "Just a shame your sister was busy, that's all."
 
 show eve outdoors normal sadopen at center
 $ renpy.transition(dissolve, layer='master')
+voice "Eve_Allison4.ogg"
 eve "Is Eileen having a good time in college?"
 
 show eve outdoors normal sad at center
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Huh1.ogg"
 allison "Why do you ask?"
 
 eve "Mom said she was worried about Eileen since she moved out, but when Eileen's around they always argue."
 
 show eve outdoors half sadopen at center
 $ renpy.transition(dissolve, layer='master')
+voice "Eve_SadOh1.ogg"
 eve "Is she really alright?"
 
 show eve outdoors half sad at center
@@ -309,13 +315,14 @@ show eve outdoors normal happy at center:
 "She gives an enthusiastic nod."
 
 eve "They think you're nice too, since you hang out with me."
+voice "Eve_Giggle.ogg"
 
 show eve outdoors normal neutral at center
 $ renpy.transition(dissolve, layer='master')
 "At least they think I'm useful, I suppose."
 
 "I never realized it before, but having a little sister is really fun. Not that I mind my own siblings, but three older brothers aren't quite the same company."
-
+voice "Allison_SoftLaugh.ogg"
 allison "Let's see some more of town before we have to go back then, okay?"
 
 show eve outdoors normal grin at center:
@@ -326,6 +333,7 @@ show eve outdoors normal grin at center:
     easeout .175 yoffset 150
 stop music fadeout 3.0
 stop ambiance fadeout 3.0
+voice "Eve_Gotcha.ogg"
 eve "Yeah!"
 
 scene black with circlewipe
@@ -359,6 +367,7 @@ stop sound fadeout 1.0
 show eileen indoors_fists narrow angry at rightside  as eileen2:
     xzoom 1 xpos 0.87
     linear 0.7 xzoom -1 xpos 0.8
+voice "Eileen_Allison5.ogg"
 eileen "You didn't."
 
 show eve outdoors normal neutral at centerleft:
@@ -372,12 +381,13 @@ $ renpy.transition(dissolve, layer='master')
 eileen "You're enjoying having a little sis, aren't you?"
 
 "She got me."
-
+voice "Allison_Hmwithquestionmark.ogg"
 allison "How's the painting going?"
 
 show eileen indoors_onhip lookaway open at rightside as eileen2:
     xpos 0.8
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm2.ogg"
 eileen "Need to go down to the city soon for supplies and stuff; no art supply stores around here. Want to come?"
 
 show eileen indoors_onhip lookaway neutral at rightside as eileen2:
@@ -386,12 +396,13 @@ $ renpy.transition(dissolve, layer='master')
 "So I'm along for the ride as usual."
 
 "I feel bad for thinking bad thoughts about her, but I can't muster any real want to come along. I'd just be baggage while she did her thing."
-
+voice "Allison_Sorry1.ogg"
 allison "Sorry, still tired from yesterday."
 
 show eileen indoors_crossed lookawaynarrow open at rightside as eileen2:
     xpos 0.8
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Sure1.ogg"
 eileen "Suit yourself, I'll be straight back afterwards. We're having pizza for dinner tonight, by the way."
 
 show eileen indoors_crossed neutral at rightside as eileen2:

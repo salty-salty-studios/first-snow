@@ -12,6 +12,7 @@ play sound "sfx/car_breakdown.ogg"
 $ renpy.pause(8.5, hard=True)
 play ambiance "sfx/ambiance/outside.ogg" fadein 3.0
 window show dissolve
+voice "Eileen_Ugh2.ogg"
 eileen "Alright, everyone out."
 
 $ renpy.music.set_volume(1.5, channel='ambiance2')
@@ -61,11 +62,13 @@ stop sound fadeout 1.0
 show caprice outdoors_handonhip neutral normal sad at right2:
     xpos 0.8 yoffset 0
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Hm2.ogg"
 allison "Know why it's not working?"
 
 show eileen outdoors_crossed frowning frown at left2:
     xpos 0.2 alpha 1
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_No1.ogg"
 eileen "No idea."
 
 show caprice outdoors_behindback pout normal raised at right2:
@@ -81,6 +84,7 @@ $ renpy.transition(dissolve, layer='master')
 show eileen outdoors_onhip lookaway open at left2:
     xpos 0.2
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Caprice1.ogg"
 eileen "What are you smiling about now?"
 
 show eileen neutral at left2:
@@ -96,6 +100,7 @@ show eileen outdoors_onhip narrow frown at left2:
 show caprice outdoors_wave raised wink opensmile at right2:
     xzoom -1 xpos 0.775
     ease 1.0 xpos 1.2
+voice "Caprice_CatchYaLater1.ogg"
 "Eileen and I grimace at each other in unison, but Caprice bounces off down the street before either of us can object. Getting the phone from her pocket as she walks, she flits between the people around her while unbothered by the ice on the sidewalk."
 
 "The background hum of people chatting and cars passing by takes over once again as we find ourselves at loose ends."
@@ -104,6 +109,7 @@ hide caprice
 show eileen outdoors_onhip neutral normal at left2:
     xpos 0.2
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm2.ogg"
 eileen "Not like we could go anywhere else, anyway..."
 
 allison "You're not going to try and stop her?"
@@ -111,6 +117,7 @@ allison "You're not going to try and stop her?"
 show eileen outdoors_crossed narrow open at left2:
     xpos 0.2
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Grumble3.ogg"
 eileen "Think she'd listen to me if I tried?"
 
 show eileen neutral at left2:
@@ -190,6 +197,7 @@ play sound "sfx/phone-pickup.ogg"
 "Without a second thought, I swipe my finger on the screen to pick up the call."
 
 $ renpy.music.set_volume(1.0)
+voice "Allison_NervousHi1.ogg"
 allison "Dad! Hi."
 
 stop sound fadeout 1.0
@@ -206,7 +214,7 @@ dad "Haven't caught you at a bad time, have I? I could call back later."
 allison "No, no. Just out with friends."
 
 "He gives his usual weird laugh, sounding more like air moving through closed teeth than a normal full-bellied chuckle. It never fails to make me smile all the same, though."
-
+voice "Allison_SoftLaugh.ogg"
 allison "What's that about?"
 
 dad "Just a relief to hear that. We've all been worried about you finding new friends after such a big change. What with changing schools and moving out."
@@ -224,7 +232,7 @@ allison "Everything's good. Rose has been a big help with everything."
 "I might still have my ups and downs, but the last thing I want to do is stress them out over me."
 
 dad "That's good to hear, hopefully it'll take a bit of stress off a certain someone. Tell Rose hello for us if you remember."
-
+voice "Allison_SureThing.ogg"
 allison "Can do. How's everyone there?"
 
 dad "Your brothers are a pain in the ass like always, for one."
@@ -269,7 +277,7 @@ dad "We miss you too. Christmas around here will be a lot warmer once you're bac
 allison "I really can't wait to see all of you again."
 
 dad "I'll be looking forward to it, too. I love you, Allison."
-
+voice "Allison_TakeCare2.ogg"
 allison "I love you, too. Bye."
 
 play sound "sfx/phone-hangup.ogg"
@@ -291,7 +299,7 @@ stop sound fadeout 1.0
 show bg downtown city
 hide shadow
 $ renpy.transition(dissolve, layer='master')
-
+voice "Allison_Sigh1.ogg"
 "Noticing Eileen through the crowd, coffee cup in hand as she sips away, I take a long breath and try to steady myself. I don't want to look weird in front of her, getting all sulky in the middle of the street."
 
 show eileen outdoors_onhip normal neutral at offcenterleft:
@@ -479,6 +487,7 @@ show caprice outdoors_pumped raised normal opensmile at right2:
     easeout .175 yoffset 55
     easein .15 yoffset 48
     easeout .175 yoffset 55
+voice "Caprice_AH.ogg"
 caprice "Oh! Oh! Let me!"
 
 show eileen lookawaynarrow frown at leftside
@@ -493,6 +502,7 @@ show caprice outdoors_behindback raised at right2:
     xpos 0.82
 show eileen outdoors_crossed narrow open at leftside
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_OkayFine3.ogg"
 eileen "Just don't go for a drive or something. I assure you, you haven't seen me actually angry yet."
 
 show eileen frown at leftside
@@ -515,6 +525,7 @@ caprice "Now then, let's fix this thing!"
 show millie outdoors_tented raised closedhappy smile at offcenterright:
     xzoom 1 xpos 0.54
     linear 0.7 xzoom -1 xpos 0.5
+voice "Millie_LetsSeeWhatICanDo.ogg"
 millie "Right, let's have a look."
 
 play sound "sfx/car-hood-open.ogg"
@@ -538,6 +549,7 @@ show eileen neutral at leftside:
 show caprice outdoors_wave angry closedhappy grin at rightedge:
     xpos 0.8
 $ renpy.transition(dissolve, layer='master')
+voice "Caprice_Yeah4.ogg"
 caprice "Got it!"
 
 stop sound fadeout 1.0
@@ -567,7 +579,7 @@ with midDissolve
 $ renpy.music.set_volume(0.6, delay=0.0)
 play music "music/painter.ogg" fadein 2.5
 "It feels a little weird to have Eileen's arm around my back and holding my shoulder as we walk side by side. Even if it is to guide me, she takes a long while to let go."
-
+voice "Allison_Um1.ogg"
 allison "You sure you're alright leaving them alone?"
 
 show eileen outdoors_crossed frowning angry at offcenterleft:
@@ -600,18 +612,20 @@ $ renpy.transition(dissolve, layer='master')
 show shadow:
     alpha 0.5
     ease 2.0 alpha 0
+voice "Allison_Sigh2.ogg"
 allison "So you saw me earlier, huh?"
 
 show eileen outdoors_crossed lookaway open at offcenterleft:
     xpos 0.4
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm2.ogg"
 eileen "You did look a bit bummed when you got off the phone. Didn't want to bring it up if you didn't, though."
 
 show eileen neutral at offcenterleft:
     xpos 0.4
 $ renpy.transition(dissolve, layer='master')
 "She left me no choice..."
-
+voice "Allison_Sorry2.ogg"
 allison "I missed talking to my family after so long. Sorry for being so flustered."
 
 show eileen frowning neutral at offcenterleft:
@@ -622,6 +636,7 @@ eileen "Nothing to be sorry for, it's only natural."
 show eileen outdoors_onhip normal neutral at offcenterleft:
     xpos 0.4
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Huh1.ogg"
 eileen "So you're homesick, huh?"
 
 allison "Sometimes."
@@ -634,6 +649,7 @@ eileen "Moving out for the first time's a big deal. You don't need to beat yours
 show eileen normal neutral at offcenterleft:
     xpos 0.4
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_ThankYou.ogg"
 allison "Thanks. I thought I was doing okay, but when I heard my dad's voice again..."
 
 show eileen lookaway frown at offcenterleft:
@@ -665,6 +681,7 @@ eileen "It's good that you have a roommate you get along with, though. That'd he
 show eileen outdoors_onhip normal open at offcenterleft:
     xpos 0.4
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Allison2.ogg"
 eileen "We're all freshmen, here. You, me, Caprice, we're all away from our families and trying to find our niche. If you want to talk or vent, we're around. Wallace told me you talked, so you have that big oaf as well."
 
 show eileen lookaway neutral at offcenterleft:
@@ -715,6 +732,7 @@ show eileen outdoors_crossed lookawaynarrow angry at offcenterleft:
     zoom 1.0 yoffset 0
     xpos 0.4
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Grumble2.ogg"
 eileen "It's not a secret I'm not great at this kind of thing. Just keep what I said in mind, alright?"
 
 show eileen normal at offcenterleft:
@@ -741,11 +759,12 @@ play loopsfx "sfx/ambiance/snowwalk.ogg"
 "Removing her hand, Eileen and I start heading back towards the car side by side. It's easy for someone who's outgoing to comfort another, but it feels somehow more sincere from a loner like Eileen. She's making an extra effort for my sake."
 
 "Somehow, I feel a little warmer than I did before as we walk back. Maybe the weather's improved, but I doubt that's it."
-
+voice "Allison_Hm2.ogg"
 allison "I guess you've had experience living alone, haven't you?"
 
 show eileen normal open at offcenterleft
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Huh1.ogg"
 eileen "Me? Just moved out for college, same as you."
 
 show eileen neutral at offcenterleft
@@ -782,6 +801,7 @@ show caprice outdoors_wave raised closedhappy grin at rightedge:
     time 1
     bounce
 with midDissolve
+voice "Caprice_HEY.ogg"
 caprice "Hey, guys!"
 
 play sound "sfx/car-hood-close.ogg"
@@ -831,11 +851,13 @@ show eileen normal neutral at leftside:
 show millie closedhappy at offcenterright:
     xpos 0.54
 $ renpy.transition(dissolve, layer='master')
+voice "Millie_SmallLaugh.ogg"
 millie "I was about to recommend taking it to my dad's auto shop, actually."
 
 show eileen closed at leftside:
     xpos 0.14
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Sure1.ogg"
 eileen "Your dad's shop is as good as any other. I'll sort something out this afternoon."
 
 show eileen outdoors_fists frowning smile at leftside:
@@ -911,6 +933,7 @@ eileen "Now, are we finally going to the aquarium?"
 show caprice outdoors_pumped raised normal opensmile at rightedge:
     xpos 0.8
     bounce
+voice "Caprice_Yeah3.ogg"
 caprice "Yeah!"
 
 show caprice raised closedhappy opensmile at rightedge:
@@ -926,6 +949,7 @@ $ renpy.transition(dissolve, layer='master')
 show caprice outdoors_behindback neutral at rightedge:
     xpos 0.8
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Eileen3.ogg"
 allison "Let's go, Eileen."
 
 show eileen smile at leftside:

@@ -36,6 +36,7 @@ show eileen outdoors_crossed closed open at centerright:
     zoom 0.5 ypos 0.15
     xpos 0.65 alpha 1
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Ugh2.ogg"
 eileen "We should have just joined the normal art club. You know, the one which isn't led by a maniac."
 
 show eileen angry at centerright:
@@ -48,6 +49,7 @@ $ renpy.transition(dissolve, layer='master')
 show eileen normal at centerright:
     ypos 0.15
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Um2.ogg"
 allison "She is... a lot. She means well, though."
 
 show eileen outdoors_onhip narrow open at centerright:
@@ -93,6 +95,7 @@ show eileen outdoors_onhip normal open at center
 with fadeInOut
 window show dissolve
 $ camera_reset()
+voice "Eileen_Huh1.ogg"
 eileen "Did I say something wrong?"
 
 show eileen neutral at center
@@ -105,6 +108,7 @@ eileen "Is there much good about winter?"
 
 show eileen neutral at center
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Hm1.ogg"
 allison "Being back with family, all the pretty snow around, people in cute jackets and coats, holidays..."
 
 show eileen lookawaynarrow angry at center
@@ -117,6 +121,7 @@ eileen "'Holidays' are the problem; everywhere's starting to close up or shut do
 
 show eileen outdoors_onhip closed neutral at center
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Grumble3.ogg"
 eileen "I want to keep practicing instead of loafing around, but the life drawing classes are over and all the student modelling offers have dried up."
 
 show eileen normal neutral at center
@@ -139,6 +144,7 @@ $ renpy.sound.set_volume(1.5, channel="ambiance", delay=1.0)
 show shadow:
     alpha 0.4
     ease 1.0 alpha 0
+voice "Allison_Um2.ogg"
 allison "If it'd be helpful, I mean... maybe I could do it?"
 
 show eileen outdoors_crossed disbelief neutral at center:
@@ -173,6 +179,7 @@ allison "Would it be in your apartment, or something?"
 
 show eileen outdoors_onhip normal open at offcenterleft
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Yeah1.ogg"
 eileen "Yeah."
 
 show eileen disbelief neutral at offcenterleft
@@ -181,6 +188,7 @@ $ renpy.transition(dissolve, layer='master')
 
 stop ambiance fadeout 3.0
 stop music fadeout 3.0
+voice "Allison_Okay.ogg"
 allison "It's fine. I'll do it."
 
 scene black with circlewipe
@@ -214,6 +222,7 @@ allison "I'm fine, thanks."
 
 show eileen normal open at offcenterleft
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Sure2.ogg"
 eileen "Suit yourself. I'll grab my stuff, just make yourself comfortable."
 
 show eileen indoors_onhip normal neutral at offcenterleft:
@@ -288,9 +297,9 @@ show bg apteileen livingroom messy norabbit
 $ renpy.transition(midDissolve, layer='master')
 
 "Eileen simply stares at me, face flat as she holds a bag of supplies in her hand. I really shouldn't have just gone and started fiddling with her stuff."
-
+voice "Allison_Sorry1.ogg"
 allison "Sorry."
-
+voice "Allison_Um1.ogg"
 allison "Um, it's really cute."
 
 hide eileen2
@@ -331,6 +340,7 @@ show eileen indoors_onhip lookawaynarrow open at centerright:
     zoom 0.6 yoffset -310
     xpos 0.65
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm1.ogg"
 eileen "My sister gave it to me to keep me company when I moved out."
 
 scene black with dissolve

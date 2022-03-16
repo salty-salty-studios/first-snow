@@ -45,9 +45,11 @@ letterbox "She looks perfectly content as she whiles away her time with tools sp
 scene bg aptallison outside with dissolve
 $ camera_reset()
 window show dissolve
+voice "Allison_Hey2.ogg"
 allison "Working on the bike again?"
 
 stop loopsfx fadeout 1.0
+voice "Rose_Hey1.ogg"
 rose "Hmm? Oh, hey. That was quick."
 
 play sound "sfx/body_prod.ogg"
@@ -71,6 +73,7 @@ allison "You said to grab necessities if they're on sale and don't spoil, right?
 show rose smirk at centerright:
     xpos 0.6
 $ renpy.transition(dissolve, layer='master')
+voice "Rose_UhHuh3.ogg"
 rose "You're learning."
 
 show rose smile at centerright:
@@ -149,8 +152,9 @@ allison "Not really; the schoolwork isn't too hard so far. A friend wants to sta
 
 show rose outdoors_handonhip talking as rose2
 $ renpy.transition(dissolve, layer='master')
+voice "Rose_Hm.ogg"
 rose "A club, huh? That's cool. What kind?"
-
+voice "Allison_Sigh2.ogg"
 allison "An art club, apparently. I'm not really sold on it though. I need to study, and she basically came up with the whole idea by herself."
 
 show rose outdoors_smokingmouth neutral as rose2
@@ -175,6 +179,7 @@ rose "Never had the chance to go."
 
 show rose outdoors_handonhip halfclosed laugh as rose2
 $ renpy.transition(dissolve, layer='master')
+voice "Rose_Heh1.ogg"
 rose "Maybe you get why I'm on your case about this stuff now?"
 
 rose "Not everyone gets the chances you have, so make the most of it. Go to parties, get some friends, and find a boyfriend sometime. Even if it doesn't last, it'll be a start."
@@ -200,6 +205,7 @@ with midDissolve
 "Seeing Eileen last week reminded me of that. Women like her keep catching my eye, and then there was that painting of hers. As time goes on, that difference in what I like looking at gets harder and harder to explain away."
 
 stop loopsfx fadeout 3.0
+voice "Rose_Allison1.ogg"
 rose "Rag, Allison?"
 
 hide shadow
@@ -215,13 +221,15 @@ $ camera_reset()
 show rose outdoors_smokingmouth normal puzzled at centerright:
     xpos 0.6 alpha 0 yoffset 200
     ease 1.0 alpha 1 yoffset 0
+voice "Rose_YouAlright1.ogg"
 rose "You alright?"
-
+voice "Allison_HuhAndUm.ogg"
 allison "Yeah. I was just thinking how life is complicated."
 
 show rose neutral at centerright:
     xpos 0.6 alpha 1 yoffset 0
 $ renpy.transition(dissolve, layer='master')
+voice "Rose_WhateverYouSay1.ogg"
 rose "Sure is."
 
 show rose outdoors_smoking smile at centerright:

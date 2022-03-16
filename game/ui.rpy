@@ -277,7 +277,7 @@ screen side_menu():
         action Quit(confirm=True)
 
     if not store.rabbl.in_playthrough():
-        add "ui/side/menu_new.webp":
+        add lang_img("ui/side/menu_new.webp"):
             xpos 110
             ypos 193
 
@@ -291,7 +291,7 @@ screen side_menu():
             activate_sound "sfx/turning-pages.ogg"
     else:
         if store.rabbl_playthrough.oneshot:
-            add Transform("ui/side/menu_save.webp", alpha=0.5):
+            add Transform(lang_img("ui/side/menu_save.webp"), alpha=0.5):
                 xpos 110
                 ypos 193
 
@@ -301,8 +301,8 @@ screen side_menu():
                 ypos 193
         else:
             imagebutton:
-                idle "ui/side/menu_save.webp"
-                selected_idle "ui/side/menu_back1.webp"
+                idle lang_img("ui/side/menu_save.webp")
+                selected_idle lang_img("ui/side/menu_back1.webp")
                 xpos 110
                 ypos 193
                 action ToggleScreen('save', fastDissolve)
@@ -318,8 +318,8 @@ screen side_menu():
                 action ToggleScreen('save', fastDissolve)
 
     imagebutton:
-        idle "ui/side/menu_load.webp"
-        selected_idle "ui/side/menu_back2.webp"
+        idle lang_img("ui/side/menu_load.webp")
+        selected_idle lang_img("ui/side/menu_back2.webp")
         xpos 8
         ypos 310
         action ToggleScreen('load', fastDissolve)
@@ -335,8 +335,8 @@ screen side_menu():
         action ToggleScreen('load', fastDissolve)
 
     imagebutton:
-        idle "ui/side/menu_options.webp"
-        selected_idle "ui/side/menu_back3.webp"
+        idle lang_img("ui/side/menu_options.webp")
+        selected_idle lang_img("ui/side/menu_back3.webp")
         xpos 109
         ypos 420
         action ToggleScreen('preferences', fastDissolve)
@@ -352,7 +352,7 @@ screen side_menu():
         action ToggleScreen('preferences', fastDissolve)
 
     if store.rabbl.in_playthrough():
-        add "ui/side/menu_main.webp":
+        add lang_img("ui/side/menu_main.webp"):
             xpos -7
             ypos 530
 
@@ -365,8 +365,8 @@ screen side_menu():
             action MainMenu()
     else:
         imagebutton:
-            idle "ui/side/menu_extras.webp"
-            selected_idle "ui/side/menu_back4.webp"
+            idle lang_img("ui/side/menu_extras.webp")
+            selected_idle lang_img("ui/side/menu_back4.webp")
             xpos -7
             ypos 530
             action ToggleScreen('extras', fastDissolve)
@@ -431,27 +431,22 @@ screen preferences():
             text_selected_hover_outlines []
             action Show('preferences_keymap', fastDissolve)
 
-        if store.rabbl.seen_scene('4S2'):
-            textbutton _("Voices"):
-                text_size 30
-                xpos 950
-                ypos 52
-                selected_left_padding 9
-                background Null()
-                selected_background "ui/preferences/sections/voices.webp"
-                text_color "#faf6e7"
-                text_selected_color "#4e585f"
-                text_hover_outlines [(3, "#4b565f", 0, 0)]
-                text_selected_hover_outlines []
-                action Show('preferences_voices', fastDissolve)
-
-            $ access_xpos = 1060
-        else:
-            $ access_xpos = 950
+        textbutton _("Voices"):
+            text_size 30
+            xpos 950
+            ypos 52
+            selected_left_padding 9
+            background Null()
+            selected_background "ui/preferences/sections/voices.webp"
+            text_color "#faf6e7"
+            text_selected_color "#4e585f"
+            text_hover_outlines [(3, "#4b565f", 0, 0)]
+            text_selected_hover_outlines []
+            action Show('preferences_voices', fastDissolve)
 
         textbutton _("Accessibility"):
             text_size 30
-            xpos access_xpos
+            xpos 1060
             ypos 52
             selected_left_padding 9
             background Null()
@@ -933,80 +928,128 @@ init python:
         renpy.music.set_volume(volume, channel='voice')
         renpy.restart_interaction()
 
+init python:
+    def update_h_val(new_y):
+        set_screen_var('h_val', new_y)
+
 screen preferences_voices():
     tag prefmenu
 
+    default h_val = 0
+
     python:
         voices = [
-            ('caprice', 'Caprice Shiften', 'Lisa Reimold', '#839093'),
-            ('millie',  'Millie Clarke',   'Jill Harris',  '#925254'),
-            ('hayley',  'Hayley Curah',    'Elissa Park',  '#cc9351')
+            ('allison',   'Allison Merlo',    'Elizabeth Quedenfeld', '#1c2831'),
+            ('eileen',    'Eileen Turner',    'Kira Buckland',        '#9a9065'),
+            ('rose',      'Rose Garcia',      'Nola Klop',            '#c7633b'),
+            ('wallace',   'Wallace Moore',    'Steven Kelly',         '#b2678a'),
+            ('caprice',   'Caprice Shiften',  'Lisa Reimold',         '#839093'),
+            ('millie',    'Millie Clarke',    'Jill Harris',          '#925254'),
+            ('hayley',    'Hayley Curah',     'Elissa Park',          '#cc9351'),
+            ('eve',       'Eve Turner',       'Aimee Smith',          '#9a9065'),
+            ('elizabeth', 'Elizabeth Turner', 'Abigail Turner',       '#9a9065'),
+            ('andrew',    'Andrew Turner',    'Bradley Gareth',       '#5b4741'),
         ]
+        adj = ui.adjustment(changed=update_h_val)
 
-    frame:
-        background "ui/preferences/voices/bg.webp"
-        xpos 485
+    vbox:
+        xpos 339
         ypos 229
 
-        hbox:
-            xpos 57
+        frame:
+            background "ui/preferences/voices/bg.webp"
+            xsize 767
+            ysize 420
+            padding (0, 0)
 
-            for (tag, name, vo, color) in voices:
-                python:
-                    sample = 'voice/test_' + tag + '.mp3'
-                    event = ExtendableEvent(1.0,
-                        start_func=renpy.partial(play_vo_test, tag, sample),
-                        stop_func=renpy.partial(stop_vo_test, tag)
-                    )
-                    voice_adj = ui.adjustment(range=1.0, value=GetCharacterVolume(tag),
-                        changed=renpy.partial(sustain_vo_test, event, tag, 1.0)
-                    )
-                    topbar = LiveComposite((160, 346),
-                        (0, 0), "ui/preferences/voices/bar_{}.webp".format(tag),
-                        (0, 0), Transform("ui/preferences/voices/bar.webp", alpha=0.6)
-                    )
-                fixed:
-                    xsize 197
+            viewport id "preferences_voices_characters":
+                xpos 57
+                xsize 717
+                xadjustment adj
+                mousewheel "horizontal"
 
-                    vbar value SetCharacterVolume(tag):
-                        adjustment voice_adj
-                        xpos 0
-                        ypos 28
-                        xysize (160, 346)
-                        top_bar topbar
-                        bottom_bar "ui/preferences/voices/bar_{}.webp".format(tag)
+                hbox:
+                    for (tag, name, vo, color) in voices:
+                        python:
+                            sample = 'voice/test_' + tag + '.mp3'
+                            event = ExtendableEvent(1.0,
+                                start_func=renpy.partial(play_vo_test, tag, sample),
+                                stop_func=renpy.partial(stop_vo_test, tag)
+                            )
+                            voice_adj = ui.adjustment(range=1.0, value=GetCharacterVolume(tag),
+                                changed=renpy.partial(sustain_vo_test, event, tag, 1.0)
+                            )
+                            topbar = LiveComposite((160, 346),
+                                (0, 0), "ui/preferences/voices/bar_{}.webp".format(tag),
+                                (0, 0), Transform("ui/preferences/voices/bar.webp", alpha=0.6)
+                            )
+                        fixed:
+                            xsize 197
 
-                    vbar value SetCharacterVolume(tag):
-                        adjustment voice_adj
-                        xpos 165
-                        ypos 16
-                        xysize (23, 373)
-                        base_bar Null()
-                        thumb "ui/preferences/voices/indicator.webp"
+                            vbar value SetCharacterVolume(tag):
+                                adjustment voice_adj
+                                xpos 0
+                                ypos 28
+                                xysize (160, 346)
+                                top_bar topbar
+                                bottom_bar "ui/preferences/voices/bar_{}.webp".format(tag)
 
-                    text "[name]":
-                        size 24
-                        color color
-                        outlines [(2, "#faf6e7", 0, 0)]
-                        xpos 164
-                        ypos 351
-                        xanchor 1.0
+                            vbar value SetCharacterVolume(tag):
+                                adjustment voice_adj
+                                xpos 165
+                                ypos 16
+                                xysize (23, 373)
+                                base_bar Null()
+                                thumb "ui/preferences/voices/indicator.webp"
 
-                    text _("VO: ") + vo:
-                        size 18
-                        color color
-                        outlines [(2, "#faf6e7", 0, 0)]
-                        xpos 164
-                        ypos 383
-                        xanchor 1.0
+                            text "[name]":
+                                size 24
+                                color color
+                                outlines [(2, "#faf6e7", 0, 0)]
+                                xpos 168
+                                ypos 351
+                                xanchor 1.0
+
+                            text "[vo]":
+                                size 16
+                                color color
+                                outlines [(2, "#faf6e7", 0, 0)]
+                                xpos 164
+                                ypos 383
+                                xanchor 1.0
+
+        bar value XScrollValue("preferences_voices_characters"):
+            xpos 50
+            xsize 711
+            ysize 40
+            left_bar 'ui/preferences/voices/slider-bg.webp'
+            right_bar 'ui/preferences/voices/slider-bg.webp'
+            thumb 'ui/preferences/voices/slider-handle.webp'
 
     text _("Volume Settings"):
         size 48
         color "#faf6e7"
         outlines [(5, "#292d34", 0, 0)]
-        xpos 505
+        xpos 355
         ypos 185
 
+    imagebutton:
+        idle "ui/preferences/checkbox.webp"
+        hover "ui/preferences/checkbox-hover.webp"
+        selected_idle "ui/preferences/checkbox-checked.webp"
+        selected_hover "ui/preferences/checkbox-checked-hover.webp"
+        xpos 964
+        ypos 205
+        hover_xpos 963
+        selected_xpos 963
+        action Preference('emphasize audio', 'toggle')
+
+    text _("Emphasize voices"):
+        color "#faf6e7"
+        outlines [(1, "#292d34", 0, 0)]
+        ypos 210
+        xpos 994
+        size 20
 
 screen preferences_accessibility():
     tag prefmenu
@@ -2230,7 +2273,7 @@ screen saveload(save):
                         background "ui/saveload/slot-empty.webp"
                         xysize (654, 125)
 
-                        text "No saves here...":
+                        text _("No saves here..."):
                             xalign 0.5
                             yalign 0.5
                             yoffset -18
@@ -2419,15 +2462,12 @@ screen say(what, who, doublespeak=False):
         tb = Null()
         bg_base = 'ui/textbar/' + get_ui_season() + '/'
         tb_base = 'ui/textbar/names/' + get_language() + '/'
-        
+
+        vinfo = store._get_voice_info()
+        speaking = speaking_flavour = False
+
         if who:
-            if doublespeak:
-                bg = bg_base + 'double.webp'
-                tb = tb_base + '_'.join(who) + '.webp'
-            elif bg_base + who.lower() + '.webp' in renpy.list_files():
-                bg = bg_base + who.lower() + '.webp'
-                tb = tb_base + who.lower() + '.webp'
-            else:
+            if not doublespeak:
                 if who in character_tags:
                     tag = character_tags[who]
                 else:
@@ -2437,9 +2477,24 @@ screen say(what, who, doublespeak=False):
                             break
                     else:
                         tag = who.lower()
-
-                # Don't ask. Just don't.
                 sprite_tag = tag.split('_', 1)[0]
+
+                if vinfo.filename and vinfo.tag.rstrip('u') in (tag, sprite_tag):
+                    voice_file = vinfo.filename.rsplit('/', 1)[1]
+                    if voice_file.startswith('scene_') or voice_file[0].isdigit():
+                        speaking = True
+                    else:
+                        speaking_flavour = True
+
+                who = who.split('{', 1)[0]
+            if doublespeak:
+                bg = bg_base + 'double.webp'
+                tb = tb_base + '_'.join(who) + '.webp'
+            elif bg_base + who.lower() + '.webp' in renpy.list_files():
+                bg = bg_base + who.lower() + '.webp'
+                tb = tb_base + who.lower() + '.webp'
+            else:
+                # Don't ask. Just don't.
                 context = renpy.game.context()
 
                 sprite = context.scene_lists.get_displayable_by_tag('master', sprite_tag)
@@ -2506,6 +2561,14 @@ screen say(what, who, doublespeak=False):
             add tb:
                 xpos 143
                 ypos 28
+            if speaking:
+                add "ui/textbar/voice.webp":
+                    xpos (160 + 11 * len(who))
+                    ypos 0
+            elif speaking_flavour:
+                add "ui/textbar/voice-flavour.webp":
+                    xpos (160 + 11 * len(who))
+                    ypos 0
 
         frame:
             background Null()
@@ -2814,7 +2877,7 @@ transform ctc_transform:
 
 # Skip indicator.
 screen skip_indicator():
-    $ ind = 'ui/hud/' + get_ui_season() + '/skip.webp'
+    $ ind = lang_img('ui/hud/' + get_ui_season() + '/skip.webp')
     add ind at skipind_transform
 
 transform skipind_transform:
@@ -2830,7 +2893,7 @@ transform skipind_transform:
 
 # Screenshot indicator.
 screen screenshot_indicator():
-    $ ind = 'ui/hud/' + get_ui_season() + '/screenshot.webp'
+    $ ind = lang_img('ui/hud/' + get_ui_season() + '/screenshot.webp')
     add ind at screenind_transform
 
 transform screenind_transform:

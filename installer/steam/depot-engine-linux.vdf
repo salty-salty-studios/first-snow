@@ -11,8 +11,8 @@
 
 	"FileMapping"
 	{
-		"LocalPath" "lib/pythonlib2.7/*"
-		"DepotPath" "lib/pythonlib2.7"
+		"LocalPath" "lib/python2.7/*"
+		"DepotPath" "lib/python2.7"
 		"recursive" "1"
 	}
 

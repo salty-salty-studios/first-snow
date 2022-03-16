@@ -68,6 +68,7 @@ window show dissolve
 play sound "sfx/phone-pickup.ogg"
 $ renpy.music.set_volume(0.5, delay=2.0)
 stop loopsfx
+voice "Allison_NervousHi3.ogg"
 allison "Dad! Hi."
 
 stop sound fadeout 1.0
@@ -76,7 +77,7 @@ dad "Hi, Allison. Not catching you at a bad time?"
 allison "No, no, it's fine!"
 
 dad "Sounds like you're busy; I can barely hear you."
-
+voice "Allison_Um1.ogg"
 allison "Just wandering about downtown to fill some time and do some errands."
 
 dad "Still good to be picked up tomorrow morning?"
@@ -99,7 +100,7 @@ show shadow:
     alpha 0
     ease 2.0 alpha 0.4
 "I feel a chill as the last few days rush through my head."
-
+voice "Allison_Hm1.ogg"
 allison "Yeah. I did."
 
 dad "Hmm."
@@ -113,7 +114,7 @@ dad "Well... when you're home, you'll tell us all about it, right?"
 allison "Of course. I'm looking forward to it."
 
 dad "I am too. You know that you can tell me anything."
-
+voice "Allison_TakeCare2.ogg"
 allison "I know. Bye, dad."
 
 dad "See you soon, love you."
@@ -307,7 +308,7 @@ $ renpy.transition(dissolve, layer='master')
 show eileen outdoors_onhip normal at center:
     xpos 0.52
 $ renpy.transition(dissolve, layer='master')
-allison "Everything we did together... was it was only ever a pain to you?"
+allison "Everything we did together... was it only ever a pain to you?"
 
 allison "I didn't want to say it, but..."
 
@@ -456,5 +457,6 @@ allison "And I love you. Let's do this together."
 stop ambiance fadeout 4.0
 allison "It's okay, Eileen. Welcome home."
 
+window hide midDissolve
 # note: please don't do anything further here because of the credits transition!
 return

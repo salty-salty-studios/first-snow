@@ -56,8 +56,9 @@ show rose indoors_handonhip halfclosed puzzled at right2 as rose2:
     zoom 0.75 yoffset -400
     xpos 0.9
 $ renpy.transition(dissolve, layer='master')
+voice "Rose_Hey4.ogg"
 rose "Wow, you look like hell."
-
+voice "Allison_Hm4.ogg"
 allison "Thank you."
 
 show rose talking at rightedge as rose2:
@@ -104,6 +105,7 @@ $ camera_reset()
 
 show rose smirk at offcenterright
 $ renpy.transition(dissolve, layer='master')
+voice "Rose_Heh2.ogg"
 rose "The ones above us, right? Man, I'm sick of them."
 
 show rose halfclosed at offcenterright
@@ -150,12 +152,13 @@ show rose indoors_handonhip normal smile at rightside:
     xpos 0.8 alpha 1.0
     nod2
 rose "Here. Go buy yourself an espresso or something on the way."
-
+voice "Allison_Huh1.ogg"
 allison "It's fine, you don't have to-"
 
 show rose halfclosed smirk at rightside:
     xpos 0.8
 $ renpy.transition(dissolve, layer='master')
+voice "Rose_Heh1.ogg"
 rose "Just take it. You look awful."
 
 "She really does have a way with words."
@@ -545,6 +548,7 @@ show wallace even closed neutral at center:
 $ renpy.transition(dissolve, layer='master')
 "Wallace simply shrugs."
 
+voice "scene_1S3_en_fb73c78a.ogg"
 wallace "Not the first time clubs have been pushy about scouting members. I was actually thinking the whole thing might be good for Eileen; her single-mindedness is her best and worst trait, really."
 
 show wallace upturned neutral at center:

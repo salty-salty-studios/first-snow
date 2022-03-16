@@ -12,7 +12,7 @@ This is the source code for First Snow. It is released in the hope people can le
   - Windows XP+ (but please do upgrade to a more modern Windows)
   - OS X 10.7+
   - Linux with glibc or glibc-compatible libc and X11
-* Ren'Py 7.3.5
+* Ren'Py 7.4.11
 * Some creativity (optional!)
 
 ## Working with the script
@@ -74,20 +74,28 @@ This release of First Snow as a whole will be licensed under the Creative Common
     - The terms of the BSD 3-clause license are as follows:
     
 ```
-Copyright 2020,
+Copyright 2020, 2021,
+  Abigail Turner (voice acting: Elizabeth),
   AcoTan (sprite art),
   adirosa (colouring),
+  Aimee Smith (voice acting: Eve),
   All-Maker (CG art, editing)
   birdluvr (colouring),
+  Bradley Gareth (voice acting: Andrew),
   Cura (background art, colouring),
-  Elissa Park (voice acting, Hayley),
+  Elissa Park (voice acting: Hayley),
+  Elizabeth Quedenfeld (voice acting: Allison),
   James J (music),
-  Jill Harris (voice acting, Millie),
-  Lisa Reimold (voice acting, Caprice),
-  minute (act card art),
+  Jill Harris (voice acting: Millie),
+  Kira Buckland (voice acting: Eileen),
+  Lisa Reimold (voice acting: Caprice),
+  Nola Klop (voice acting: Rose),
   Shiz (programming, rough direction),
   Skrats (additional art),
+  Steven Kelly (voice acting: Wallace),
   Suriko (writing),
+  Syon (voice acting casting, voice acting direction)
+  theo minute (act card art),
   TopHat (UI design),
   Träumendes Mädchen (direction)
 

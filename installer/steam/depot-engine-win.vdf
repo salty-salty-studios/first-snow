@@ -11,8 +11,8 @@
 
 	"FileMapping"
 	{
-		"LocalPath" "lib/pythonlib2.7/*"
-		"DepotPath" "lib/pythonlib2.7"
+		"LocalPath" "lib/python2.7/*"
+		"DepotPath" "lib/python2.7"
 		"recursive" "1"
 	}
 
@@ -20,6 +20,13 @@
 	{
 		"LocalPath" "lib/windows-i686/*"
 		"DepotPath" "lib/windows-i686"
+		"recursive" "1"
+	}
+
+	"FileMapping"
+	{
+		"LocalPath" "lib/windows-x86_64/*"
+		"DepotPath" "lib/windows-x86_64"
 		"recursive" "1"
 	}
 

@@ -28,6 +28,7 @@ scene bg buildingbusiness hallway1f with midDissolve
 
 play music "music/caprice_default_m.ogg" fadein 5.0
 $ renpy.transition(vpunch, layer='master')
+voice "Caprice_HEY.ogg"
 caprice "{size=32}{b}Hey!{/b}{/size}"
 
 "The loud voice from behind makes me jump in startlement."
@@ -35,6 +36,7 @@ caprice "{size=32}{b}Hey!{/b}{/size}"
 show caprice outdoors_wave raised closedhappy opensmile at offcenterright:
     bounce
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Hey2.ogg"
 allison "Oh, Caprice. Hey."
 
 show caprice outdoors_handonhip normal neutral at offcenterright
@@ -45,16 +47,19 @@ allison "What brings you to my class, anyway?"
 
 show caprice outdoors_chintap pout half sad at offcenterright
 $ renpy.transition(dissolve, layer='master')
+voice "Caprice_Uuh2.ogg"
 caprice "Millie wasn't around, so I got lonely."
 
 "So I'm the second choice, huh? Well, at least I can be around for her."
 
 show caprice outdoors_chintap neutral normal even at offcenterright
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_SoftLaugh.ogg"
 allison "You two really are close, aren't you?"
 
 show caprice outdoors_pumped grin normal even at offcenterright:
     bounce
+voice "Caprice_Laugh1.ogg"
 caprice "Yep! We grew up together, and now we even live together. Millie, and me, and Hayley! She's our other friend. We take good care of each other."
 
 "There really are all kinds of relationships. It's so different from high school, where everyone was neatly organized into friends, classmates, or strangers, and we all just lived with our parents."
@@ -68,15 +73,17 @@ allison "I live with a family friend. She's nice, even if she looks a bit rough.
 show caprice outdoors_chintap frown half even at offcenterright
 $ renpy.transition(dissolve, layer='master')
 "The statement seems to give Caprice food for thought."
-
+voice "Caprice_Hmm1.ogg"
 caprice "You shouldn't look so tired, school's finally over for the year."
 
 show caprice outdoors_pumped opensmile normal angry at offcenterright:
     bounce
+voice "Caprice_Yeah3.ogg"
 caprice "...And that's why we're having an extra special art club meeting!"
 
 show caprice neutral at offcenterright
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Huh2.ogg"
 allison "'Extra special'?"
 
 show caprice outdoors_behindback neutral closedhappy even at offcenterright
@@ -101,6 +108,7 @@ $camera_move(1800,-150,400,0,6,'ease')
 "As we head towards the arts building, we spot Eileen just outside. Busy huffing into her hands and rubbing them together for a little warmth, it takes a moment for her to notice us."
 
 stop sound fadeout 1.0
+voice "Allison_Eileen6.ogg"
 allison "Eileen, hi."
 
 show eileen outdoors_onhip neutral normal at centerright:
@@ -124,6 +132,7 @@ show caprice outdoors_wave neutral normal even at right2:
 show caprice outdoors_wave grin normal even at right2:
     xpos 0.775 alpha 1
     bounce
+voice "Caprice_HEY.ogg"
 caprice "{b}Hey!{/b}"
 
 show eileen outdoors_crossed disbelief at centerleft:
@@ -135,6 +144,7 @@ show caprice outdoors_behindback grin half raised at right2 with dissolve
 show eileen outdoors_crossed closed open at centerleft:
     xzoom -1 xpos 0.25
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Afternoon.ogg"
 eileen "'Afternoon, you two."
 
 show eileen outdoors_crossed narrow frown at left2:
@@ -153,6 +163,7 @@ caprice "We've had a change of plans."
 show eileen lookawaynarrow open at left2:
     xpos 0.25
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Huh2.ogg"
 eileen "Do I get a say in this?"
 
 stop ambiance fadeout 4.0
@@ -190,11 +201,13 @@ eileen "Will you just leave that thing? You've been fiddling with your phone on 
 show eileen neutral at left2:
     xzoom -1
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Hm4.ogg"
 allison "Hey."
 
 show eileen indoors_onhip lookaway angry at left2:
     xzoom -1 xpos 0.225
     linear 0.7 xzoom 1 xpos 0.28
+voice "Eileen_Hmm2.ogg"
 eileen "Well, it's true."
 
 show caprice indoors_handonhip grin closedhappy even at right2:
@@ -213,10 +226,12 @@ eileen "So Rose isn't here, then?"
 show eileen neutral at left2:
     xzoom 1 xpos 0.28
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Hm3.ogg"
 allison "She drifts in and out. I've given up trying to work out any schedule to it."
 
 show caprice indoors_chintap open normal even at right2
 $ renpy.transition(dissolve, layer='master')
+voice "Caprice_Cool1.ogg"
 caprice "Cool posters."
 
 show caprice neutral at right2
@@ -239,6 +254,7 @@ show caprice grin at right2
 show eileen indoors_crossed angry narrow at left2:
     xzoom -1 xpos 0.225
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Huh2.ogg"
 allison "Huh? What's going on? This is my apartment, you know."
 
 stop sound fadeout 1.0
@@ -295,6 +311,7 @@ show eileen indoors_crossed lookaway neutral at rightside:
 with fadeInOut
 $ camera_reset()
 stop sound fadeout 1.0
+voice "Caprice_Millie2.ogg"
 caprice "Millie! Have you heard from Hayley?"
 
 show millie indoors_neutral neutral closedsad even at centerleft with dissolve:
@@ -312,12 +329,14 @@ $ renpy.transition(dissolve, layer='master')
 show millie indoors_neutral speaking normal sad at centerleft:
     xzoom -1 xpos 0.39
 $ renpy.transition(dissolve, layer='master')
+voice "Millie_HelloThere.ogg"
 millie "She's at home, sleeping. Seems like finals tired her out."
 
 show millie neutral at centerleft:
     xpos 0.39
 show caprice indoors_behindback puffed half even at centerright
 $ renpy.transition(dissolve, layer='master')
+voice "Caprice_ComeOooon1.ogg"
 caprice "She never wants to go anywhere!"
 
 show wallace indoors neutral forward even at leftside:
@@ -349,6 +368,7 @@ stop sound fadeout 1.0
 show millie indoors_tented smile closedhappy even at centerleft:
     xpos 0.39
 $ renpy.transition(dissolve, layer='master')
+voice "Millie_SmallLaugh.ogg"
 millie "Just a little something for the special event."
 
 show caprice indoors_behindback neutral normal even at centerright with dissolve
@@ -360,6 +380,7 @@ millie "I can't believe you didn't take the santa hat they were offering, though
 show wallace indoors frown halfopen even at leftside:
     xpos 0.14
 $ renpy.transition(dissolve, layer='master')
+voice "Wallace_NotHappening.ogg"
 wallace "I'm not wearing a santa hat, Christmas or not."
 
 show millie indoors_neutral neutral closedhappy even at centerleft:
@@ -373,6 +394,7 @@ show caprice indoors_behindback grin closedhappy raised at centerright
 show wallace indoors frown halfsmall even at leftside:
     xpos 0.14
 $ renpy.transition(dissolve, layer='master')
+voice "Wallace_Sigh4.ogg"
 wallace "Don't you start."
 
 show wallace indoors mopen closed even at leftside:
@@ -394,6 +416,7 @@ $camera_move(3800,-850,880,0,5,'ease')
 show eileen indoors_fists sad open at rightside:
     xpos 0.9
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Allison7.ogg"
 eileen "Is a party here going to be a problem for you?"
 
 show wallace indoors neutral open even at leftside:
@@ -403,6 +426,7 @@ show millie indoors_neutral neutral normal even at offcenterleft:
 show eileen neutral at rightside:
     xpos 0.9
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_NervousSure.ogg"
 allison "It'll be fine. I think."
 
 show bg aptallison livingroom blurred2 as bg2 behind eileen:
@@ -449,16 +473,19 @@ show wallace indoors frown halfsmall even at left2:
     zoom 1.0 yoffset 0
     xzoom -1 xpos 0.2
 $ renpy.transition(dissolve, layer='master')
+voice "Wallace_Millie4.ogg"
 wallace "Millie..."
 
 show millie indoors_tented pout half sad at offcenterright:
     xpos 0.55
 $ renpy.transition(dissolve, layer='master')
+voice "Millie_Wallace2.ogg"
 millie "Just the one. It won't hurt, right?"
 
 show caprice indoors_pumped puffed normal angry behind millie at right2:
     xpos 0.82
     bounce
+voice "Caprice_HEY.ogg"
 caprice "Hey, stop hogging the chips!"
 
 show millie indoors_neutral frown normal angry at offcenterright:
@@ -558,6 +585,7 @@ show eileen neutral at offcenterleft:
 show millie indoors_neutral speaking normal even at centerright:
     xpos 0.62
 $ renpy.transition(dissolve, layer='master')
+voice "Millie_NoNotReally.ogg"
 millie "They're doing this and that, but most of them seem to have plans. The leader and his friends are graduating, so it's going to be up to me to keep the ship sailing."
 
 show millie neutral at centerright:
@@ -594,6 +622,7 @@ show caprice indoors_chintap open half raised at right2:
     xpos 1.1
     ease 2.0 xpos 0.85
 pause 3.0
+voice "Caprice_Wallace1.ogg"
 caprice "Hey, Wallace?"
 
 "Caprice's excited tone as she wolfs down her mouthful of nachos fails to enthuse him."
@@ -608,16 +637,19 @@ caprice "Remember what we talked about at the pizza place? I mean, about your cl
 show wallace indoors frown closed even at left2:
     xpos 0.12
 $ renpy.transition(dissolve, layer='master')
+voice "Wallace_No1.ogg"
 wallace "No."
 
 show caprice indoors_pumped frown normal sad at right2:
     xpos 0.85
 $ renpy.transition(dissolve, layer='master')
+voice "Caprice_AH.ogg"
 caprice "But-"
 
 show wallace indoors frown halfopen even at left2:
     xpos 0.12
 $ renpy.transition(dissolve, layer='master')
+voice "Wallace_No2.ogg"
 wallace "No."
 
 show bg aptallison livingroom
@@ -662,11 +694,13 @@ hide millie
 show rose outdoors_handonhip halfclosed smirk at left2:
     xzoom -1 xpos 0.25 alpha 1
 $ renpy.transition(dissolve, layer='master')
+voice "Rose_Hey3.ogg"
 rose "...'Sup?"
 
 "I struggle to stifle a chuckle, never having seen Rose act so awkwardly before."
 
 $ renpy.music.set_volume(1.0, delay=5.0)
+voice "Allison_NervousLaugh.ogg"
 allison "Everyone, this is my roommate, Rose. Rose, these are my friends from college."
 
 $camera_move(0,0,0,0,5,'ease')
@@ -680,6 +714,7 @@ rose "Sure is some wild party you got goin' on here."
 show rose outdoors_handonhip normal talking at left2:
     xpos 0.25
     bounce
+voice "Rose_OhYeah3.ogg"
 rose "Oh, actually..."
 
 show rose outdoors_handonhip neutral normal at left2:

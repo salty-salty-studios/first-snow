@@ -35,7 +35,7 @@ stop sound fadeout 1.0
 scene bg misc zoo with midDissolve
 $ camera_reset()
 "Even as we bought our tickets, I'd wondered if coming here during winter was such a good idea. It turned out to be better than I could've hoped."
-
+voice "Allison_SoftLaugh.ogg"
 allison "I've never been here with so few people around, usually this is a complete madhouse. It's nice."
 
 scene bg misc zoo blur
@@ -46,6 +46,7 @@ with midDissolve
 
 "I've seen it done in so many romantic movies, but actually feeling someone take my hand in theirs feels so unexpectedly comforting."
 
+voice "Eileen_Heh3.ogg"
 eileen "You're easy to please."
 
 "Without any real idea of how to respond, all I can do is keep walking."
@@ -62,6 +63,7 @@ eileen "Crowded or not, it's a nice zoo."
 show eileen neutral at rightish:
     xpos 0.72
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Huh1.ogg"
 allison "You've never been here before?"
 
 show eileen lookaway open at rightish:
@@ -89,11 +91,13 @@ $ renpy.transition(dissolve, layer='master')
 show eileen outdoors_onhip narrow open at rightish:
     xpos 0.72
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm1.ogg"
 eileen "That was a lie."
 
 show eileen sad neutral at rightish:
     xpos 0.72
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Hm4.ogg"
 allison "Oh."
 
 "I can't tell if she meant for it to be a joke. Her expression makes it obvious she didn't expect me to actually fall for it. It's too late to laugh now, and I just feel stupid for not questioning her."
@@ -146,7 +150,7 @@ show eileen outdoors_onhip closed neutral at rightish:
     xpos 0.7
     ease 4.0 xpos 0.72
 eileen "I'll go grab something, then. Go grab a seat for us before they're all taken, would you?"
-
+voice "Allison_SureThing.ogg"
 allison "Roger!"
 
 show eileen narrow angry at rightish:
@@ -322,6 +326,7 @@ show eileen outdoors_fists lookaway neutral at offcenterleft:
     zoom 1.0 yoffset 0
     xpos 0.4
 with midDissolve
+voice "Allison_Sigh1.ogg"
 allison "It was hard when I left, yeah."
 
 allison "I have a new family now, though. You, Caprice, Rose, and everyone else I've met at college."
@@ -348,11 +353,13 @@ show eileen closed frown at offcenterleft:
 show eileen outdoors_onhip lookaway open at offcenterleft:
     xzoom 1 xpos 0.4
     linear 0.7 xzoom -1 xpos 0.35
+voice "Eileen_Allison2.ogg"
 eileen "Hey, Allison?"
 
 show eileen outdoors_onhip sadmouth at offcenterleft:
     xzoom -1 xpos 0.35
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Huh1.ogg"
 allison "Yeah?"
 
 $ renpy.music.set_volume(0.4, delay=6.0)
@@ -386,7 +393,7 @@ $ renpy.transition(dissolve, layer='master')
 "I hear myself give a weird startled gasp before I reflexively fall back into my chair."
 
 "Eileen looks rather nonplussed as she settles back into her own chair, her eyes studying me as she does."
-
+voice "Allison_Oh.ogg"
 allison "What was that!?"
 
 show eileen outdoors_crossed open at centerleft
@@ -395,6 +402,7 @@ eileen "You just had mustard on your cheek."
 
 show eileen narrow smile at centerleft
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_AwkwardGiggle2.ogg"
 eileen "...And I was maybe bullying you a little."
 
 "I feel my face flower into a wild blush as I grimace at her, partly for her betrayal after my expectation of an affectionate gesture, and partly for startling me so badly."
@@ -412,6 +420,7 @@ stop music fadeout 4.0
 show eileen outdoors_onhip closed at offcenterleft:
     xzoom 1 xpos 0.4
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Heh1.ogg"
 eileen "Come on miss pouty-lips. Let's get moving before the weather goes bad."
 
 scene black with circlewipe
@@ -439,6 +448,7 @@ eileen "Haven't collapsed on me, have you?"
 
 show eileen neutral at offcenterleft
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Sigh2.ogg"
 allison "I'm dead. You can have my stuff."
 
 show eileen indoors_onhip narrow open at offcenterleft
@@ -447,10 +457,12 @@ eileen "Better check before digging the grave. Remember how they used to do that
 
 show eileen neutral at offcenterleft
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Oh.ogg"
 allison "Look at that, I'm suddenly alive!"
 
 show eileen lookawaynarrow open at offcenterleft
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Heh4.ogg"
 eileen "It's a Christmas miracle."
 
 show eileen closed neutral at offcenterleft:
@@ -470,12 +482,13 @@ show eileen indoors_crossed narrow angry at rightside as eileen2:
     xzoom 1 xpos 1.1 alpha 1
     ease 2.0 xpos 0.82
 pause 1.0
+voice "Eileen_Grumble3.ogg"
 eileen "You want a coffee or something while you rummage through my stuff?"
 
 allison "I'm not rummaging, I'm just..."
 
 "I try to think of another word to describe what I'm doing, but it doesn't take long to realize Eileen's right. Looking like a kid caught with their hand in the cookie jar as she walks back over, I try to change topics."
-
+voice "Allison_Um1.ogg"
 allison "Do you really like Westerns or something? They're all either those or documentaries."
 
 show eileen indoors_onhip closed open at rightside as eileen2:
@@ -486,6 +499,7 @@ eileen "Sorry to disappoint. I just like Westerns. Can't beat a nice, simple plo
 show eileen normal neutral at rightside as eileen2:
     xpos 0.82
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_NervousSure.ogg"
 allison "Right. That makes sense."
 
 $ renpy.music.set_volume(0.5, delay=5.0)
@@ -520,7 +534,7 @@ $ renpy.transition(dissolve, layer='master')
 "As her words trail off, my heart freezes. Her stoic face only makes this worse, my brain freezing between bashfulness and shock at her being so blunt. We've only started dating, but the thought of sleeping together had passed my mind..."
 
 "Left spluttering about, I awkwardly turn away to hide my expression."
-
+voice "Allison_Um2.ogg"
 allison "Do you... want to watch one of them together?"
 
 show eileen lookawaynarrow at rightside as eileen2:
@@ -574,6 +588,7 @@ eileen "Allison."
 stop sound fadeout 1.0
 play ambiance "sfx/ambiance/heartbeat_light.ogg" fadein 2.0
 with vpunch
+voice "Allison_Oh.ogg"
 allison "Ah- Were you getting clothes? Um, sorry-"
 
 $camera_move(-500,0,300,0,6,'ease')

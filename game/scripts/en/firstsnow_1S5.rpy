@@ -60,8 +60,15 @@ with fadeInOut
 "Opening the door to the quiet room, I can't say I'm surprised at the sight before me. Of course she was going to be here."
 
 play sound "sfx/door_close.ogg"
-$ renpy.sound.set_volume(0.02, channel="loopsfx", delay=0.5)
-$ renpy.music.set_volume(0.8, delay=0)
+python:
+    # work around ren'py bug where audio emphasis "lowers" the volume absolutely,
+    # resulting in possible *higher* volumes
+    if _preferences.emphasize_audio:
+        renpy.sound.stop(channel="loopsfx", fadeout=0.5)
+    else:
+        renpy.sound.set_volume(0.02, channel="loopsfx", delay=0.5)
+    renpy.music.set_volume(0.8)
+
 show eileen indoors_onhip normal at center:
     zoom 0.65 yoffset -300
     xpos 0.52
@@ -74,13 +81,14 @@ show eileen indoors_onhip lookaway at center:
     xpos 0.52
 $ renpy.transition(dissolve, layer='master')
 "Curiosity about what she's painting gets the better of me."
-
+voice "Allison_Hey2.ogg"
 allison "Is it okay if I watch?"
 
 show eileen indoors_onhip closed at center:
     zoom 0.65 yoffset -300
     xpos 0.52
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Sure1.ogg"
 eileen "Go ahead."
 
 stop sound fadeout 1.0
@@ -92,7 +100,7 @@ show eileen indoors_onhip neutral normal at center:
     xpos 0.5 alpha 0
 $camera_move(200,-250,650,0,10,'ease')
 "She doesn't bother to look at me as she says it, but doesn't sound reluctant either, so I scoot over and sit myself on a table as quietly as I can. Eileen's brush continues to flick to and fro as she works on the background."
-
+voice "Eileen_Hmm1.ogg"
 eileen "So Caprice is a no-show?"
 
 allison "She said she had to go do something with her roommates."
@@ -100,7 +108,7 @@ allison "She said she had to go do something with her roommates."
 "Her shoulders slump as she sighs, relieved."
 
 allison "Do you really hate her that much?"
-
+voice "Eileen_Heh3.ogg"
 eileen "Believe me, if I hated her, you'd know. I'm just glad to have some quiet."
 
 "It's hard not to take that as a thinly-veiled implication that I should be quiet as well."
@@ -113,9 +121,9 @@ $camera_move(0,0,0,0,5,'ease')
 allison "You're really good at this."
 
 "It'd feel weird to say I've been talking about Eileen behind her back. What I said is true though; I'm impressed she can carry on a conversation while working, and I like how her painting's turning out."
-
+voice "Eileen_Thanks1.ogg"
 eileen "Thanks. Been doing it for a while."
-
+voice "Allison_Hmwithquestionmark.ogg"
 allison "As a hobby?"
 
 eileen "If everything works out, hopefully as a career. Artist or teacher, aiming for the latter."
@@ -131,6 +139,7 @@ show eileen indoors_crossed disbelief open at center:
     time 2
     linear 0.7 xzoom -1 xpos 0.47
 with fadeInOut
+voice "Eileen_Hmm1.ogg"
 eileen "Hmm, tube's out."
 
 show eileen indoors_onhip normal grumble at center:
@@ -160,12 +169,13 @@ eileen "So what about you?"
 
 show eileen neutral at center
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Huh1.ogg"
 allison "Sorry?"
 
 show eileen normal frown at center
 $ renpy.transition(dissolve, layer='master')
 eileen "What're you doing once you escape this place?"
-
+voice "Allison_Um2.ogg"
 allison "Oh, uh... I don't really know. Still trying to figure that out."
 
 "I feel like I failed a test as I trail off, but Eileen doesn't seem worried."
@@ -188,6 +198,7 @@ allison "My parents always told me I could do whatever I set my mind to, but it 
 
 show eileen lookaway grumble at center
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm1.ogg"
 eileen "Sounds like you have a nice family."
 
 stop music fadeout 8.0
@@ -199,6 +210,7 @@ eileen "You okay?"
 
 show eileen indoors_onhip sad frown at center
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Sigh1.ogg"
 allison "Yeah, just... I miss them."
 
 show eileen closed frown at center
@@ -215,8 +227,9 @@ allison "Mom and dad too?"
 
 show eileen indoors_crossed lookawaynarrow at center
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Grumble2.ogg"
 eileen "To be honest, things've been easier between me and my folks since I moved out."
-
+voice "Allison_Hm2.ogg"
 allison "Huh..."
 
 "It's hard to imagine being on such bad terms with my family that moving away was better. The best thing about Christmas will be the chance to see them again, but Eileen doesn't seem particularly fussed about it at all."
@@ -246,7 +259,7 @@ allison "No, not at all. I like watching you paint."
 
 $ renpy.sound.set_volume(0.0, channel='ambiance')
 "She pauses a moment before continuing."
-$ renpy.sound.set_volume(1.0, channel='ambiance')
+$ renpy.sound.set_volume(0.8, channel='ambiance')
 "It's only for a second, but I sense a hesitation there. Did I say something wrong?"
 
 stop loopsfx fadeout 2.0
@@ -317,4 +330,5 @@ window hide dissolve
 scene black with longDissolve
 $ renpy.music.set_volume(1.0, delay=0)
 $ renpy.sound.set_volume(1.0, channel="loopsfx")
+$ renpy.sound.set_volume(1.0, channel="ambiance")
 return

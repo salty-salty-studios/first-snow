@@ -74,6 +74,7 @@ show eve outdoors normal happy at centerright:
     bounce
 show eileen neutral at left2 with dissolve:
     xzoom -1
+voice "Eve_Okay1.ogg"
 eve "'Kay!"
 
 play sound "sfx/ducks_quacking.ogg"

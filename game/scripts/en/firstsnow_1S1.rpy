@@ -273,6 +273,7 @@ $camera_move(0,0,300,0,5,'ease')
 "With that, I consider the matter settled as I nod and begin to walk away. Only as I leave, do I realise my heart's racing after having to deal with her."
 
 $camera_move(500,0,300,0,3,'ease')
+voice "scene_1S1_en_2f4de9bd.ogg"
 play sound "sfx/door_open.ogg"
 show eileen normal open at left2:
     xzoom 1 xpos 0.25
@@ -483,10 +484,12 @@ scene black with dissolve
 scene bg buildingbusiness hallway1f
 show caprice outdoors_handonhip even normal grin at center
 with dissolve
+voice "Allison_Sigh2.ogg"
 allison "I can help, but... I have my schoolwork to concentrate on, you know. Getting a scholarship wasn't easy, and I'd rather not waste it."
 
 show caprice outdoors_behindback raised normal open
 $ renpy.transition(dissolve, layer='master')
+voice "Caprice_Uuh1.ogg"
 caprice "Ahh, right. You were majoring in chemistry, weren't you?"
 
 "I give a nod, albeit a slightly guilty one. Not that I'd dare have told my family, but I only picked chemistry because I happened to be good at it. Like most things in life, I just went with the default option before me."
@@ -512,6 +515,7 @@ show caprice outdoors_pumped at center:
     xpos 0.5 yoffset 55
     ease 1.0 rotate -5
     ease 1.0 rotate 0
+voice "Caprice_Yeah2-2.ogg"
 caprice "It's the most interesting part! I gotta focus hard when we get there. I plan on making it my major."
 
 stop music fadeout 2.0
@@ -534,6 +538,7 @@ $ renpy.transition(dissolve, layer='master')
 
 show caprice raised at center
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Um2.ogg"
 allison "She's about the last person I'd call a friend. Kind of scary, actually."
 
 "She might've been asking out of smalltalk before, but now I have her full interest. With reluctance, I think back to the event."
@@ -546,8 +551,9 @@ $ renpy.transition(dissolve, layer='master')
 
 show caprice outdoors_chintap normal grin at center:
     bounce
+voice "Caprice_Hmm2.ogg"
 caprice "Hmm. I think I know who you're talking about, actually."
-
+voice "Allison_Huh1.ogg"
 allison "You do?"
 
 show caprice wink at center
@@ -566,6 +572,7 @@ allison "If she already rejected one club, why would she join another?"
 
 show caprice outdoors_pumped normal at center:
     bounce
+voice "Caprice_Exactly.ogg"
 caprice "Because it's led by me, of course!"
 
 "I just sigh."
@@ -576,6 +583,7 @@ allison "I need to get to my next class. Being late for one today is already too
 
 show caprice outdoors_handonhip normal open at center:
     bounce
+voice "Caprice_AH.ogg"
 caprice "Ah, before you go!"
 
 caprice "Meet me on the second floor of the arts building after classes, okay? We need to get started on finding a club room and stuff!"
@@ -668,14 +676,16 @@ show eileen open as eileen2:
     yanchor 0.882
     size (1920, 325) crop (-400, 10, 1920, 325)
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm1.ogg"
 eileenu "Oh, it's vending machine girl."
 
 show eileen indoors_crossed normal neutral as eileen2:
     yanchor 0.882
     size (1920, 325) crop (-400, 10, 1920, 325)
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Um1.ogg"
 allison "Allison!"
-
+voice "Allison_NervousHi2.ogg"
 allison "Allison... Merlo."
 
 show bg buildingart art dusk siren
@@ -697,10 +707,11 @@ eileen "Well, I'm going to close the place up. If you want anything, you should 
 
 show eileen indoors_onhip lookawayangry
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Hmm2.ogg"
 eileen "Not that I think you have anything here."
 
 "The cold edge to her voice freezes my entire body."
-
+voice "Allison_Wait.ogg"
 allison "I mean, I can explain...!"
 
 stop music fadeout 3.0
@@ -720,6 +731,7 @@ show caprice indoors_wave even closedhappy grin at leftish:
     bounce
 with dissolve
 $ camera_reset()
+voice "Caprice_Allie1.ogg"
 caprice "Hey, Allie!"
 
 show caprice neutral normal at leftish:
@@ -741,11 +753,13 @@ show eileen frown at right2:
 show caprice normal at leftish:
     xpos 0.255
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Ugh1.ogg"
 eileen "So, Caprice got herself a new goon. I wish I was surprised."
 
 show caprice grin at leftish:
     xzoom 1 xpos 0.255
     linear 0.5 xzoom -1 xpos 0.225
+voice "Caprice_Yeah4.ogg"
 caprice "Yep!"
 
 show caprice grin at leftish:
@@ -785,10 +799,12 @@ allison "I just thought we'd... draw a bit. Didn't mean to intrude."
 show eileen disbelief grumble at right2:
     xpos 0.82
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Seriously2.ogg"
 eileen "I got permission to use this room to practice my painting, not for some dumb club."
 
 show caprice indoors_chintap wink at left2
 $ renpy.transition(dissolve, layer='master')
+voice "Caprice_Cool1.ogg"
 caprice "Sorry, but it's two against one. Majority rule!"
 
 allison "I didn't say anything about a club!"
@@ -814,6 +830,7 @@ $ renpy.transition(dissolve, layer='master')
 eileen "I just want to work in peace. That isn't much to ask."
 
 show caprice raised open at left2
+voice "Caprice_ComeOooon1.ogg"
 caprice "But-"
 
 $ renpy.music.set_volume(0.0, delay=2.0)
@@ -841,11 +858,13 @@ show eileen outdoors_onhip normal open at right2:
     zoom 1.2 yoffset 150
     xzoom -1 xpos 0.725
 $ renpy.transition(dissolve, layer='master')
+voice "Eileen_Bye4.ogg"
 eileen "See you around, I guess."
 
 show eileen outdoors_onhip normal angry at right2:
     xzoom -1 xpos 0.725
 $ renpy.transition(dissolve, layer='master')
+voice "Allison_Hm2.ogg"
 allison "Yeah..."
 
 show eileen outdoors_onhip lookaway angry at right2:
@@ -901,7 +920,7 @@ show caprice normal at left2:
     xpos 0.32
 $ renpy.transition(dissolve, layer='master')
 "As the orange of the sunset starts to wane outside, it becomes obvious that nothing more's going to get done today, just as Eileen said."
-
+voice "Allison_TakeCare2.ogg"
 allison "I'd better head home, it's getting late. See you tomorrow."
 
 hide shadow
@@ -912,6 +931,7 @@ show caprice indoors_handonhip wink at left2:
     easeout .175 yoffset -200
     easein .15 yoffset -208
     easeout .175 yoffset -200
+voice "Caprice_CatchYaLater1.ogg"
 caprice "See ya! If you ever wanna draw, feel free to drop by the new club room!"
 
 stop music fadeout 5.0
